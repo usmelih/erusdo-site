@@ -1,1 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: [https://www.erusdo.com/sitemap.xml](https://www.erusdo.com/sitemap.xml)
 
