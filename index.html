@@ -1,1 +1,786 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Erusdo | Topraksız Tarım ve Modern Sera Çözümleri</title>
+  <meta name="description" content="Erusdo; modern sera, topraksız tarım ve verimli üretim anlayışıyla taze, sürdürülebilir ve kaliteli tarım çözümleri sunar." />
+  <meta name="keywords" content="Erusdo, topraksız tarım, modern sera, sera çözümleri, hidroponik tarım, çilek üretimi, yeşillik üretimi" />
+  <meta name="author" content="Erusdo" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Erusdo | Topraksız Tarım ve Modern Sera Çözümleri" />
+  <meta property="og:description" content="Modern sera ve topraksız tarım çözümleriyle sürdürülebilir üretim yaklaşımı." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.erusdo.com/" />
+  <meta property="og:image" content="https://www.erusdo.com/assets/img/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Erusdo | Topraksız Tarım ve Modern Sera Çözümleri" />
+  <meta name="twitter:description" content="Modern sera ve topraksız tarım çözümleriyle sürdürülebilir üretim yaklaşımı." />
+  <link rel="canonical" href="https://www.erusdo.com/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
+  <style>
+    :root {
+      --primary: #194d2f;
+      --primary-dark: #0f301d;
+      --secondary: #5f8f4e;
+      --accent: #d94141;
+      --text: #1e1e1e;
+      --muted: #667085;
+      --bg: #f7faf7;
+      --white: #ffffff;
+      --border: #e4ebe4;
+      --shadow: 0 16px 40px rgba(16, 24, 40, 0.08);
+      --radius: 20px;
+      --container: 1200px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: min(100% - 2rem, var(--container));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .section-header {
+      max-width: 720px;
+      margin-bottom: 48px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      color: var(--secondary);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 5vw, 4.8rem);
+      font-weight: 800;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.25s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      border-color: var(--border);
+      color: var(--primary);
+      background: var(--white);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(228, 235, 228, 0.8);
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 82px;
+      gap: 24px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      color: var(--primary);
+      font-size: 1.2rem;
+      letter-spacing: -0.03em;
+    }
+
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      font-weight: 800;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: #344054;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .hero {
+      padding: 72px 0 56px;
+      background:
+        radial-gradient(circle at top right, rgba(95, 143, 78, 0.12), transparent 30%),
+        radial-gradient(circle at left bottom, rgba(25, 77, 47, 0.08), transparent 28%),
+        var(--bg);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .hero-copy p {
+      font-size: 1.08rem;
+      max-width: 620px;
+      margin-top: 22px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .badge {
+      background: rgba(25, 77, 47, 0.08);
+      color: var(--primary);
+      border: 1px solid rgba(25, 77, 47, 0.1);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .hero-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+
+    .hero-visual {
+      min-height: 560px;
+      border-radius: 22px;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(16, 24, 40, 0.18), rgba(16, 24, 40, 0.18)),
+        url('https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=1400&q=80') center/cover;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 24px;
+    }
+
+    .hero-stat {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .stat-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      text-align: center;
+    }
+
+    .stat-box strong {
+      display: block;
+      font-size: 1.6rem;
+      color: var(--primary);
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: 0 10px 24px rgba(16, 24, 40, 0.04);
+    }
+
+    .card-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      background: rgba(25, 77, 47, 0.08);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-size: 1.4rem;
+      margin-bottom: 18px;
+      font-weight: 800;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .image-panel {
+      min-height: 500px;
+      border-radius: 28px;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(25, 77, 47, 0.18), rgba(25, 77, 47, 0.18)),
+        url('https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?auto=format&fit=crop&w=1400&q=80') center/cover;
+      box-shadow: var(--shadow);
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .feature-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 16px 18px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: #fbfdfb;
+    }
+
+    .feature-item span {
+      width: 28px;
+      height: 28px;
+      flex: 0 0 28px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    .products {
+      background: var(--bg);
+    }
+
+    .product-card {
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .product-image {
+      height: 240px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .product-body {
+      padding: 24px;
+    }
+
+    .product-meta {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: var(--secondary);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .cta {
+      padding: 88px 0;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--primary), #245c39);
+      color: var(--white);
+      border-radius: 30px;
+      padding: 56px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-box p,
+    .cta-box h2,
+    .cta-box strong {
+      color: var(--white);
+    }
+
+    .cta-side {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 24px;
+      padding: 28px;
+    }
+
+    .cta-side li + li {
+      margin-top: 12px;
+    }
+
+    .site-footer {
+      background: #101828;
+      color: #d0d5dd;
+      padding: 72px 0 28px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 0.8fr 1fr;
+      gap: 28px;
+      margin-bottom: 34px;
+    }
+
+    .footer-title {
+      color: var(--white);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .footer-copy {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid,
+      .split,
+      .cta-box,
+      .footer-grid,
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .section,
+      .cta {
+        padding: 64px 0;
+      }
+
+      .navbar {
+        min-height: 72px;
+      }
+
+      .hero {
+        padding-top: 44px;
+      }
+
+      .hero-card,
+      .card,
+      .cta-box,
+      .cta-side {
+        padding: 20px;
+      }
+
+      .hero-stat {
+        grid-template-columns: 1fr;
+      }
+
+      .btn-group {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Erusdo",
+    "url": "https://www.erusdo.com/",
+    "logo": "https://www.erusdo.com/assets/img/logo.png",
+    "description": "Erusdo, modern sera ve topraksız tarım çözümleriyle sürdürülebilir üretim yaklaşımı sunan tarım markasıdır.",
+    "sameAs": [
+      "https://www.instagram.com/",
+      "https://www.linkedin.com/"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="/" class="logo" aria-label="Erusdo ana sayfa">
+        <span class="logo-mark">E</span>
+        <span>Erusdo</span>
+      </a>
+
+      <nav aria-label="Ana menü">
+        <ul class="nav-links">
+          <li><a href="#hakkimizda">Hakkımızda</a></li>
+          <li><a href="#cozumler">Çözümler</a></li>
+          <li><a href="#urunler">Ürünler</a></li>
+          <li><a href="#neden-erusdo">Neden Erusdo</a></li>
+          <li><a href="#iletisim">İletişim</a></li>
+        </ul>
+      </nav>
+
+      <a href="#iletisim" class="btn btn-primary">Teklif Al</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Modern Tarım Yaklaşımı</span>
+          <h1>Topraksız tarımda güçlü üretim, sürdürülebilir kalite.</h1>
+          <p>
+            Erusdo; modern sera anlayışı, verim odaklı üretim sistemi ve kaliteli ürün yaklaşımıyla
+            topraksız tarımda güven veren çözümler sunar. Çilekten yeşillik üretimine kadar daha kontrollü,
+            daha temiz ve daha sürdürülebilir bir üretim modeli hedefler.
+          </p>
+
+          <div class="hero-badges">
+            <span class="badge">Topraksız Tarım</span>
+            <span class="badge">Modern Sera</span>
+            <span class="badge">Sürdürülebilir Üretim</span>
+          </div>
+
+          <div class="btn-group">
+            <a href="#cozumler" class="btn btn-primary">Çözümlerimizi İncele</a>
+            <a href="#urunler" class="btn btn-secondary">Ürünleri Gör</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-visual" role="img" aria-label="Modern sera içinde verimli tarım üretimi"></div>
+          <div class="hero-stat">
+            <div class="stat-box">
+              <strong>%100</strong>
+              <p>kontrollü üretim yaklaşımı</p>
+            </div>
+            <div class="stat-box">
+              <strong>Modern</strong>
+              <p>sera ve sistem altyapısı</p>
+            </div>
+            <div class="stat-box">
+              <strong>Taze</strong>
+              <p>kalite odaklı ürün vizyonu</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cozumler">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Erusdo Çözümleri</span>
+          <h2>Verimli üretim için güçlü tarım altyapısı</h2>
+          <p>
+            Erusdo, üretimin her aşamasında kalite, verim ve sürdürülebilirlik odağını merkezde tutar.
+            Kurumsal yapıya uygun, güven veren ve modern bir tarım deneyimi sunmayı hedefler.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon">01</div>
+            <h3>Topraksız Tarım Sistemleri</h3>
+            <p>
+              Kontrollü üretim yaklaşımıyla daha temiz, daha dengeli ve daha izlenebilir bir yetiştirme süreci.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">02</div>
+            <h3>Modern Sera Yaklaşımı</h3>
+            <p>
+              İklim, sulama ve üretim süreçlerinin daha sistemli yönetilmesini destekleyen modern yapı anlayışı.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">03</div>
+            <h3>Kaliteli Ürün Odağı</h3>
+            <p>
+              Çilek ve yeşillik gibi ürünlerde tazelik, süreklilik ve güven unsurunu ön planda tutan yaklaşım.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="neden-erusdo">
+      <div class="container split">
+        <div class="image-panel" role="img" aria-label="Sera içinde yetişen yeşil ürünler"></div>
+
+        <div>
+          <span class="eyebrow">Neden Erusdo?</span>
+          <h2>Tarımda profesyonel görünüm, üretimde güven veren yaklaşım</h2>
+          <p>
+            Erusdo, sadece ürün sunan bir marka değil; aynı zamanda modern tarım anlayışını temsil eden,
+            profesyonel kimliği güçlü bir üretim markası olmayı hedefler. Web sitesi, kurumsal iletişim dili ve
+            ürün anlatımı da bu güveni destekleyecek şekilde kurgulanır.
+          </p>
+
+          <div class="feature-list">
+            <div class="feature-item">
+              <span>✓</span>
+              <div>
+                <h3>Sürdürülebilir üretim anlayışı</h3>
+                <p>Kaynak kullanımında daha verimli, daha kontrollü ve gelecek odaklı yaklaşım.</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <span>✓</span>
+              <div>
+                <h3>Marka değeri yüksek kurumsal yapı</h3>
+                <p>Güven veren sunum, net iletişim ve profesyonel marka algısı.</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <span>✓</span>
+              <div>
+                <h3>SEO ve dijital büyümeye uygun temel</h3>
+                <p>Arama motorlarında görünürlük sağlayacak güçlü içerik ve teknik altyapı.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section products" id="urunler">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Öne Çıkan Ürünler</span>
+          <h2>Erusdo üretim vizyonunu yansıtan ürün grupları</h2>
+          <p>
+            Ürün sayfaları zamanla genişletilerek her ürün için ayrı SEO odaklı içerikler, teknik bilgiler ve
+            satış odaklı anlatımlar eklenebilir.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card product-card">
+            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=1200&q=80');"></div>
+            <div class="product-body">
+              <span class="product-meta">Ürün Grubu</span>
+              <h3>Çilek</h3>
+              <p>Modern sera ve kontrollü üretim yaklaşımıyla yüksek kalite algısı oluşturan güçlü ürün grubu.</p>
+            </div>
+          </article>
+
+          <article class="card product-card">
+            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1200&q=80');"></div>
+            <div class="product-body">
+              <span class="product-meta">Ürün Grubu</span>
+              <h3>Yeşillikler</h3>
+              <p>Taze, temiz ve düzenli üretim anlayışını ön plana çıkaran yeşillik kategorileri.</p>
+            </div>
+          </article>
+
+          <article class="card product-card">
+            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1518977956812-cd3dbadaaf31?auto=format&fit=crop&w=1200&q=80');"></div>
+            <div class="product-body">
+              <span class="product-meta">Ürün Grubu</span>
+              <h3>Özel Üretim Çözümleri</h3>
+              <p>İleride farklı ürün tipleri ve iş birliklerine göre genişleyebilecek esnek üretim vizyonu.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="iletisim">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <span class="eyebrow" style="color:#cfead4;">İletişime Geçin</span>
+            <h2>Erusdo ile profesyonel bir tarım markası deneyimi oluşturun</h2>
+            <p>
+              Ürünlerimiz, üretim yaklaşımımız ve iş birliği fırsatları hakkında detaylı bilgi almak için bizimle iletişime geçin.
+            </p>
+            <div class="btn-group">
+              <a href="mailto:info@erusdo.com" class="btn btn-secondary">E-posta Gönder</a>
+              <a href="tel:+900000000000" class="btn btn-secondary">Bizi Arayın</a>
+            </div>
+          </div>
+
+          <aside class="cta-side">
+            <strong style="display:block; margin-bottom:14px; font-size:1.15rem;">Hızlı İletişim</strong>
+            <ul>
+              <li>E-posta: info@erusdo.com</li>
+              <li>Telefon: +90 000 000 00 00</li>
+              <li>Konum: Türkiye</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="hakkimizda">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo" style="color:#fff; margin-bottom:16px;">
+            <span class="logo-mark">E</span>
+            <span>Erusdo</span>
+          </div>
+          <p>
+            Erusdo; topraksız tarım, modern sera yaklaşımı ve sürdürülebilir üretim odağıyla güçlü bir marka yapısı oluşturur.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="footer-title">Kurumsal</h3>
+          <ul>
+            <li><a href="#hakkimizda">Hakkımızda</a></li>
+            <li><a href="#neden-erusdo">Neden Erusdo</a></li>
+            <li><a href="#cozumler">Çözümler</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-title">Ürünler</h3>
+          <ul>
+            <li><a href="#urunler">Çilek</a></li>
+            <li><a href="#urunler">Yeşillikler</a></li>
+            <li><a href="#urunler">Özel Üretim</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-title">İletişim</h3>
+          <ul>
+            <li><a href="mailto:info@erusdo.com">info@erusdo.com</a></li>
+            <li><a href="tel:+900000000000">+90 000 000 00 00</a></li>
+            <li>Türkiye</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-copy">
+        <p>© 2026 Erusdo. Tüm hakları saklıdır.</p>
+        <p>Topraksız tarım ve modern sera çözümleri için kurumsal web altyapısı.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
