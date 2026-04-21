@@ -20,7 +20,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
   <link rel="stylesheet" href="assets/css/style.css" />
 
   <script type="application/ld+json">
@@ -41,22 +40,22 @@
 <body>
   <header class="site-header">
     <div class="container navbar">
-      <a href="/" class="logo" aria-label="Erusdo ana sayfa">
+      <a href="index.html" class="logo" aria-label="Erusdo ana sayfa">
         <span class="logo-mark">E</span>
         <span>Erusdo</span>
       </a>
 
       <nav aria-label="Ana menü">
         <ul class="nav-links">
-          <li><a href="#hakkimizda">Hakkımızda</a></li>
-          <li><a href="#cozumler">Çözümler</a></li>
-          <li><a href="#urunler">Ürünler</a></li>
-          <li><a href="#neden-erusdo">Neden Erusdo</a></li>
-          <li><a href="#iletisim">İletişim</a></li>
+          <li><a href="hakkimizda.html">Hakkımızda</a></li>
+          <li><a href="index.html#cozumler">Çözümler</a></li>
+          <li><a href="urunler.html">Ürünler</a></li>
+          <li><a href="index.html#neden-erusdo">Neden Erusdo</a></li>
+          <li><a href="iletisim.html">İletişim</a></li>
         </ul>
       </nav>
 
-      <a href="#iletisim" class="btn btn-primary">Teklif Al</a>
+      <a href="iletisim.html" class="btn btn-primary">Teklif Al</a>
     </div>
   </header>
 
@@ -79,8 +78,8 @@
           </div>
 
           <div class="btn-group">
-            <a href="#cozumler" class="btn btn-primary">Çözümlerimizi İncele</a>
-            <a href="#urunler" class="btn btn-secondary">Ürünleri Gör</a>
+            <a href="index.html#cozumler" class="btn btn-primary">Çözümlerimizi İncele</a>
+            <a href="urunler.html" class="btn btn-secondary">Ürünleri Gör</a>
           </div>
         </div>
 
@@ -255,7 +254,7 @@
     </section>
   </main>
 
-  <footer class="site-footer" id="hakkimizda">
+  <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div>
@@ -271,18 +270,18 @@
         <div>
           <h3 class="footer-title">Kurumsal</h3>
           <ul>
-            <li><a href="#hakkimizda">Hakkımızda</a></li>
-            <li><a href="#neden-erusdo">Neden Erusdo</a></li>
-            <li><a href="#cozumler">Çözümler</a></li>
+            <li><a href="hakkimizda.html">Hakkımızda</a></li>
+            <li><a href="index.html#neden-erusdo">Neden Erusdo</a></li>
+            <li><a href="index.html#cozumler">Çözümler</a></li>
           </ul>
         </div>
 
         <div>
           <h3 class="footer-title">Ürünler</h3>
           <ul>
-            <li><a href="#urunler">Çilek</a></li>
-            <li><a href="#urunler">Yeşillikler</a></li>
-            <li><a href="#urunler">Özel Üretim</a></li>
+            <li><a href="urunler.html">Çilek</a></li>
+            <li><a href="urunler.html">Yeşillikler</a></li>
+            <li><a href="urunler.html">Özel Üretim</a></li>
           </ul>
         </div>
 
@@ -297,11 +296,12 @@
       </div>
 
       <div class="footer-copy">
-        <p>© 2026 Erusdo. Tüm hakları saklıdır.</p>
+        <p>© <span data-current-year></span> Erusdo. Tüm hakları saklıdır.</p>
         <p>Topraksız tarım ve modern sera çözümleri için kurumsal web altyapısı.</p>
       </div>
     </div>
   </footer>
+
   <script src="assets/js/main.js"></script>
 </body>
 </html>
