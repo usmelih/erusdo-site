@@ -480,3 +480,136 @@ p {
   }
 }
 
+/* ==============================
+   MAP
+============================== */
+.map-section {
+  margin-top: 48px;
+}
+
+.map-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  background: var(--white);
+}
+
+.map-card iframe {
+  display: block;
+  width: 100%;
+  min-height: 430px;
+  filter: saturate(0.92) contrast(1.02);
+}
+
+.map-info-card {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  width: min(340px, calc(100% - 44px));
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(228, 235, 228, 0.9);
+  border-radius: 22px;
+  padding: 18px;
+  box-shadow: 0 18px 45px rgba(16, 24, 40, 0.14);
+}
+
+.map-info-top {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.map-pin {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(25, 77, 47, 0.1);
+  color: var(--primary);
+}
+
+.map-info-card strong {
+  display: block;
+  color: var(--primary-dark);
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.map-info-card p {
+  margin-top: 4px;
+  font-size: 0.9rem;
+}
+
+.map-info-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.map-info-meta span {
+  display: inline-flex;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(25, 77, 47, 0.08);
+  color: var(--primary);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.map-info-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.map-info-actions a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 11px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.map-action-primary {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.map-action-secondary {
+  background: var(--white);
+  color: var(--primary);
+  border: 1px solid var(--border);
+}
+
+@media (max-width: 640px) {
+  .map-info-card {
+    position: static;
+    width: 100%;
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    box-shadow: none;
+  }
+
+  .map-card {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .map-card iframe {
+    min-height: 360px;
+  }
+
+  .map-info-actions {
+    flex-direction: column;
+  }
+}
