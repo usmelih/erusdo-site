@@ -483,133 +483,61 @@ p {
 /* ==============================
    MAP
 ============================== */
-.map-section {
-  margin-top: 48px;
-}
-
-.map-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 28px;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
+/* ==============================
+   BUSINESS CARD
+============================== */
+.business-card {
   background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  max-width: 420px;
 }
 
-.map-card iframe {
-  display: block;
-  width: 100%;
-  min-height: 430px;
-  filter: saturate(0.92) contrast(1.02);
-}
-
-.map-info-card {
-  position: absolute;
-  top: 22px;
-  left: 22px;
-  width: min(340px, calc(100% - 44px));
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(228, 235, 228, 0.9);
-  border-radius: 22px;
-  padding: 18px;
-  box-shadow: 0 18px 45px rgba(16, 24, 40, 0.14);
-}
-
-.map-info-top {
+.business-header {
   display: flex;
   gap: 14px;
-  align-items: flex-start;
+  align-items: center;
+  margin-bottom: 18px;
 }
 
-.map-pin {
-  width: 42px;
-  height: 42px;
-  flex: 0 0 42px;
+.business-icon {
+  width: 50px;
+  height: 50px;
   border-radius: 14px;
+  background: rgba(25, 77, 47, 0.1);
   display: grid;
   place-items: center;
-  background: rgba(25, 77, 47, 0.1);
+  font-size: 1.4rem;
+}
+
+.business-card h3 {
+  margin: 0;
   color: var(--primary);
 }
 
-.map-info-card strong {
-  display: block;
-  color: var(--primary-dark);
-  font-size: 1rem;
-  line-height: 1.2;
-}
-
-.map-info-card p {
-  margin-top: 4px;
+.business-sub {
   font-size: 0.9rem;
+  color: var(--muted);
 }
 
-.map-info-meta {
+.business-info p {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.business-info a {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.business-actions {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
   margin-top: 16px;
 }
 
-.map-info-meta span {
-  display: inline-flex;
-  padding: 7px 10px;
-  border-radius: 999px;
-  background: rgba(25, 77, 47, 0.08);
-  color: var(--primary);
-  font-size: 0.78rem;
-  font-weight: 700;
-}
-
-.map-info-actions {
-  display: flex;
-  gap: 10px;
-  margin-top: 18px;
-}
-
-.map-info-actions a {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  padding: 11px 14px;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  font-weight: 800;
-}
-
-.map-action-primary {
-  background: var(--primary);
-  color: var(--white);
-}
-
-.map-action-secondary {
-  background: var(--white);
-  color: var(--primary);
-  border: 1px solid var(--border);
-}
-
-@media (max-width: 640px) {
-  .map-info-card {
-    position: static;
-    width: 100%;
-    border-radius: 0;
-    border-left: 0;
-    border-right: 0;
-    border-bottom: 0;
-    box-shadow: none;
-  }
-
-  .map-card {
-    display: flex;
-    flex-direction: column-reverse;
-  }
-
-  .map-card iframe {
-    min-height: 360px;
-  }
-
-  .map-info-actions {
-    flex-direction: column;
-  }
+.business-actions .btn {
+  flex: 1;
 }
