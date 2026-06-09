@@ -1,0 +1,234 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import { site, services, stats } from '../data/site';
+import { url, formatDate } from '../utils';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+
+const why = [
+  { icon: 'cpu', title: 'Veriye Dayalı Tarım', text: 'Sezgiyle değil, sensörlerden gelen gerçek verilerle karar verin. Her parselin nemini, iklimini ve verimini rakamlarla görün.' },
+  { icon: 'droplet', title: 'Su ve Enerji Tasarrufu', text: 'Akıllı sulama ve otomasyonla suyu %40’a, enerjiyi %25’e varan oranda azaltın; maliyet düşsün, verim artsın.' },
+  { icon: 'seedling', title: 'Sürdürülebilir Üretim', text: 'Doğru gübreleme ve noktasal müdahaleyle toprağı ve çevreyi koruyun. Bugünün verimi, yarının toprağı.' },
+  { icon: 'users', title: 'Saha Yanınızda', text: 'Ziraat mühendisi kadromuz kurulumdan hasada kadar sahada. Teknolojiyi kuruyor, kullanmayı öğretiyoruz.' },
+];
+
+const steps = [
+  { title: 'Keşif & Saha Analizi', text: 'Arazinizi yerinde inceliyor; toprak, su kaynağı, ürün deseni ve hedeflerinizi birlikte değerlendiriyoruz.' },
+  { title: 'Çözüm Tasarımı', text: 'İhtiyacınıza özel sensör, sulama ve otomasyon mimarisini, net bir bütçe ve geri dönüş planıyla sunuyoruz.' },
+  { title: 'Kurulum & Devreye Alma', text: 'Donanımı kuruyor, sistemi kalibre ediyor ve mobil panelden kontrolü size devrediyoruz.' },
+  { title: 'İzleme & Optimizasyon', text: 'Verileri birlikte takip ediyor, sezon boyunca sistemi ince ayarlayarak verimi sürekli iyileştiriyoruz.' },
+];
+---
+<BaseLayout>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow"><Icon name="leaf" style="width:15px;height:15px" /> Akıllı Tarım Teknolojileri</span>
+        <h1>Tarlanızı veriyle yönetin, <span style="color:var(--primary)">verimi</span> büyütün</h1>
+        <p class="lead">
+          Erusdo; akıllı sulama, sera otomasyonu ve IoT sensörleriyle üreticiye
+          veriye dayalı, sürdürülebilir tarım çözümleri sunar. Daha az su, daha az
+          maliyet, daha yüksek verim.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary btn-lg" href={url('/iletisim')}>Ücretsiz Saha Analizi <Icon name="arrow" style="width:18px;height:18px" /></a>
+          <a class="btn btn-ghost btn-lg" href={url('/hizmetler')}>Hizmetleri Keşfet</a>
+        </div>
+        <div class="hero-trust">
+          {stats.slice(0, 3).map((s) => (
+            <div><strong>{s.value}</strong>{s.label}</div>
+          ))}
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <svg class="leafpattern" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs><pattern id="p" width="48" height="48" patternUnits="userSpaceOnUse">
+            <path d="M24 8c-9 0-16 6-16 16 0 9 7 16 16 16 0-8 0-16-10-22 9 1 13 6 16 12 1-2 1-4 1-6 0-9-6-16-7-16Z" fill="#ffffff"/>
+          </pattern></defs>
+          <rect width="400" height="400" fill="url(#p)"/>
+        </svg>
+        <div class="hero-card c1">
+          <span class="dot" style="background:var(--primary-tint);color:var(--primary)"><Icon name="droplet" style="width:22px;height:22px" /></span>
+          <div><b>Nem: %38</b><span>Sulama otomatik başladı</span></div>
+        </div>
+        <div class="hero-card c2">
+          <span class="dot" style="background:var(--accent-soft);color:#5a7a18"><Icon name="chart" style="width:22px;height:22px" /></span>
+          <div><b>+%23 verim</b><span>Geçen sezona göre</span></div>
+        </div>
+        <div class="hero-card c3">
+          <span class="dot" style="background:var(--amber-soft);color:var(--amber)"><Icon name="sun" style="width:22px;height:22px" /></span>
+          <div><b>Sera: 24°C</b><span>İklim dengede</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GÜVEN ŞERİDİ -->
+  <section class="section-sm bg-soft">
+    <div class="container">
+      <p class="center muted" style="margin-bottom:22px; font-size:.92rem; letter-spacing:.04em;">TÜRKİYE’NİN DÖRT BİR YANINDA ÜRETİCİLERİN TERCİHİ</p>
+      <div class="logos">
+        <span>Sera Üreticileri</span><span>Bağ & Bahçe</span><span>Tarla Bitkileri</span><span>Fidanlıklar</span><span>Kooperatifler</span><span>Belediyeler</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- HİZMETLER -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Hizmetlerimiz</span>
+        <h2>Tohumdan hasada akıllı çözümler</h2>
+        <p>Her ölçekten işletmeye uygun, uçtan uca agrotech hizmetleri. Tek bir parselden binlerce dönüme kadar.</p>
+      </div>
+      <div class="grid cols-3">
+        {services.map((s) => (
+          <article class="card">
+            <div class="card-icon"><Icon name={s.icon} /></div>
+            <h3>{s.title}</h3>
+            <p>{s.summary}</p>
+            <a class="readmore mt-3" href={url(`/hizmetler#${s.slug}`)} style="font-family:var(--font-head);font-weight:600;color:var(--primary);display:inline-flex;gap:6px;align-items:center;">
+              Detaylar <Icon name="arrow" style="width:16px;height:16px" />
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- NEDEN ERUSDO -->
+  <section class="section bg-soft">
+    <div class="container">
+      <div class="grid" style="grid-template-columns: 0.9fr 1.1fr; gap:48px; align-items:center;">
+        <div>
+          <span class="eyebrow">Neden Erusdo?</span>
+          <h2 class="mt-2">Teknolojiyi toprağa indiriyoruz</h2>
+          <p class="lead mt-2">
+            Agrotech karmaşık olmak zorunda değil. Donanımı, yazılımı ve saha
+            desteğini tek çatı altında toplayıp size sade bir deneyim sunuyoruz —
+            siz üretime odaklanın, veriyi biz yönetelim.
+          </p>
+          <a class="btn btn-primary mt-4" href={url('/hakkimizda')}>Hikayemizi okuyun</a>
+        </div>
+        <div class="grid cols-2">
+          {why.map((w) => (
+            <div class="card">
+              <div class="card-icon"><Icon name={w.icon} /></div>
+              <h3 style="font-size:1.15rem">{w.title}</h3>
+              <p>{w.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SÜREÇ -->
+  <section class="section">
+    <div class="container">
+      <div class="grid" style="grid-template-columns: 0.8fr 1.2fr; gap:56px;">
+        <div class="section-head" style="margin-bottom:0">
+          <span class="eyebrow">Nasıl Çalışıyoruz</span>
+          <h2 class="mt-2">4 adımda akıllı tarıma geçiş</h2>
+          <p>Net, şeffaf ve sahaya uygun bir yol haritası. Her adımda yanınızdayız.</p>
+        </div>
+        <div class="steps">
+          {steps.map((s) => (
+            <div class="step">
+              <div class="num"></div>
+              <div>
+                <h3 style="font-size:1.2rem; margin-bottom:6px;">{s.title}</h3>
+                <p class="muted">{s.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- İSTATİSTİK BANDI -->
+  <section class="section bg-dark">
+    <div class="container">
+      <div class="section-head center" style="margin-bottom:40px">
+        <h2>Sahada kanıtlanmış sonuçlar</h2>
+        <p>Rakamlar, attığımız her adımın üretkenliğe dönüştüğünü gösteriyor.</p>
+      </div>
+      <div class="stats">
+        {stats.map((s) => (
+          <div class="stat"><b>{s.value}</b><span>{s.label}</span></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- REFERANS -->
+  <section class="section">
+    <div class="container narrow center">
+      <Icon name="quote" class="" style="width:44px;height:44px;color:var(--accent);margin-inline:auto" />
+      <p style="font-family:var(--font-head); font-size:clamp(1.3rem,3vw,1.9rem); font-weight:600; line-height:1.4; margin:20px 0 24px; letter-spacing:-0.02em;">
+        “Erusdo’nun akıllı sulama sistemini kurduktan sonra su faturamız yarıya
+        indi, domates verimimiz ise gözle görülür arttı. Artık tarlayı telefondan
+        yönetiyorum.”
+      </p>
+      <div class="flex items-center gap-2" style="justify-content:center">
+        <div style="width:48px;height:48px;border-radius:50%;background:var(--primary-tint);display:grid;place-items:center;font-family:var(--font-head);font-weight:800;color:var(--primary)">MK</div>
+        <div style="text-align:left">
+          <b style="font-family:var(--font-head)">Mehmet Kaya</b><br>
+          <span class="muted" style="font-size:.9rem">Sera Üreticisi · Antalya</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section class="section bg-soft">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Bilgi Bankası</span>
+        <h2>Agrotech Blog</h2>
+        <p>Akıllı tarım, sulama, sera ve verim üzerine pratik rehberler ve güncel bilgiler.</p>
+      </div>
+      <div class="grid cols-3">
+        {posts.map((post) => (
+          <article class="card post-card">
+            <a href={url(`/blog/${post.slug}`)} class="thumb" style={`background:linear-gradient(150deg, ${post.data.coverColor}, var(--primary-700))`}>
+              <span>{post.data.title.charAt(0)}</span>
+            </a>
+            <div class="body">
+              <div class="post-meta"><span class="tag">{post.data.category}</span><span>{formatDate(post.data.pubDate)}</span></div>
+              <h3><a href={url(`/blog/${post.slug}`)}>{post.data.title}</a></h3>
+              <p>{post.data.description}</p>
+              <a class="readmore" href={url(`/blog/${post.slug}`)}>Devamını oku <Icon name="arrow" style="width:15px;height:15px" /></a>
+            </div>
+          </article>
+        ))}
+      </div>
+      <div class="center mt-4">
+        <a class="btn btn-ghost" href={url('/blog')}>Tüm yazıları gör</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-band">
+        <h2>Tarlanızın potansiyelini keşfedelim</h2>
+        <p>Ücretsiz saha analizi ile başlayın. Arazinize en uygun akıllı tarım çözümünü, net bir bütçe ve geri dönüş planıyla birlikte hazırlayalım.</p>
+        <div class="flex gap-2 wrap" style="justify-content:center">
+          <a class="btn btn-white btn-lg" href={url('/iletisim')}>Ücretsiz Analiz İste</a>
+          <a class="btn btn-lg" href={site.whatsappHref} target="_blank" rel="noopener" style="background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.3)">
+            <Icon name="whatsapp" style="width:18px;height:18px" /> WhatsApp’tan yazın
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,128 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import { site, stats } from '../data/site';
+import { url } from '../utils';
+
+const values = [
+  { icon: 'target', title: 'Üretici Odaklılık', text: 'Her çözümü üreticinin gerçek ihtiyacı ve bütçesi etrafında tasarlarız. Teknoloji araçtır, amaç verimdir.' },
+  { icon: 'shield', title: 'Güven & Şeffaflık', text: 'Net fiyat, net plan, net sonuç. Vaat etmediğimizi satmaz, kurduğumuzun arkasında dururuz.' },
+  { icon: 'seedling', title: 'Sürdürülebilirlik', text: 'Suyu, toprağı ve enerjiyi koruyan çözümler üretiriz. Bugünün verimi yarının kaynağından çalmamalı.' },
+  { icon: 'cpu', title: 'Sürekli Gelişim', text: 'Tarım teknolojisi hızla değişiyor; biz de sahayı en güncel yöntem ve cihazlarla buluşturuyoruz.' },
+];
+const team = [
+  { name: 'Ziraat Mühendisleri', role: 'Saha & Agronomi', initials: 'ZM' },
+  { name: 'Yazılım & IoT Ekibi', role: 'Sensör & Platform', initials: 'IoT' },
+  { name: 'Kurulum Teknisyenleri', role: 'Devreye Alma & Bakım', initials: 'KT' },
+];
+---
+<BaseLayout title="Hakkımızda" description="Erusdo; ziraat mühendisleri, yazılımcılar ve saha teknisyenlerinden oluşan ekibiyle Türkiye’de akıllı tarımı yaygınlaştıran bir agrotech şirketidir.">
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href={url('/')}>Anasayfa</a> / Hakkımızda</div>
+      <span class="eyebrow">Hakkımızda</span>
+      <h1 class="mt-2">Teknolojiyi toprakla buluşturuyoruz</h1>
+      <p class="lead mt-2" style="max-width:62ch">
+        Erusdo, tarımın geleceğine inanan ziraat mühendisleri ve teknoloji
+        uzmanlarının bir araya gelmesiyle kuruldu. Amacımız net: üreticinin
+        işini kolaylaştırmak, verimini ve gelirini artırmak.
+      </p>
+    </div>
+  </section>
+
+  <!-- HİKAYE -->
+  <section class="section">
+    <div class="container">
+      <div class="grid" style="grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center;">
+        <div class="prose" style="font-size:1.08rem">
+          <h2>Tarladaki bir sorundan doğduk</h2>
+          <p>
+            Erusdo’nun hikayesi, üreticilerin her gün yaşadığı somut bir sorunla
+            başladı: “Ne zaman, ne kadar sulamalıyım?” Tahmine dayalı kararlar su
+            israfına, düşük verime ve gereksiz maliyete yol açıyordu.
+          </p>
+          <p>
+            {site.foundingYear} yılından bu yana toprağı dinleyen sensörler, suyu
+            akıllıca yöneten sistemler ve sahayı anlayan bir ekip kurduk. Bugün
+            seralardan açık tarlalara, bağ-bahçeden fidanlıklara kadar pek çok
+            işletmede verinin tarımı nasıl dönüştürdüğünü birlikte görüyoruz.
+          </p>
+          <p>
+            Bizim için başarı; bir üreticinin “artık tarlayı telefonumdan
+            yönetiyorum ve daha çok kazanıyorum” demesidir.
+          </p>
+        </div>
+        <div class="card" style="background:linear-gradient(160deg,var(--primary-700),#0a2c1c); color:#fff; border:none;">
+          <h3 style="color:#fff">Misyonumuz</h3>
+          <p style="color:#cfe0d5; margin-bottom:24px">
+            Akıllı tarım teknolojilerini her ölçekten üretici için erişilebilir,
+            anlaşılır ve karlı hale getirmek.
+          </p>
+          <h3 style="color:#fff">Vizyonumuz</h3>
+          <p style="color:#cfe0d5">
+            Türkiye’de veriye dayalı, sürdürülebilir tarımı standart haline
+            getiren öncü agrotech markası olmak.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- İSTATİSTİK -->
+  <section class="section-sm bg-dark">
+    <div class="container">
+      <div class="stats">
+        {stats.map((s) => <div class="stat"><b>{s.value}</b><span>{s.label}</span></div>)}
+      </div>
+    </div>
+  </section>
+
+  <!-- DEĞERLER -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Değerlerimiz</span>
+        <h2>Bizi biz yapan ilkeler</h2>
+      </div>
+      <div class="grid cols-4">
+        {values.map((v) => (
+          <div class="card">
+            <div class="card-icon"><Icon name={v.icon} /></div>
+            <h3 style="font-size:1.12rem">{v.title}</h3>
+            <p>{v.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- EKİP -->
+  <section class="section bg-soft">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Ekibimiz</span>
+        <h2>Sahada ve ekranda yanınızda</h2>
+        <p>Farklı disiplinlerden uzmanlar, tek bir amaç için: tarlanızdan en yüksek verimi almak.</p>
+      </div>
+      <div class="grid cols-3">
+        {team.map((t) => (
+          <div class="card center">
+            <div style="width:84px;height:84px;border-radius:24px;background:var(--primary-tint);color:var(--primary);display:grid;place-items:center;margin:0 auto 16px;font-family:var(--font-head);font-weight:800;font-size:1.4rem">{t.initials}</div>
+            <h3 style="font-size:1.2rem">{t.name}</h3>
+            <p class="muted">{t.role}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-band">
+        <h2>Birlikte çalışalım</h2>
+        <p>Akıllı tarıma geçiş için doğru ortaktasınız. Tanışalım, sahanızı görelim ve potansiyelinizi birlikte keşfedelim.</p>
+        <a class="btn btn-white btn-lg" href={url('/iletisim')}>İletişime geçin</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,83 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+import { url, formatDate } from '../../utils';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const featured = posts.find((p) => p.data.featured) ?? posts[0];
+const rest = posts.filter((p) => p.slug !== featured.slug);
+const categories = [...new Set(posts.map((p) => p.data.category))];
+---
+<BaseLayout title="Blog" description="Akıllı tarım, sulama, sera otomasyonu, IoT sensörler, gübreleme ve verim üzerine pratik rehberler. Erusdo Agrotech blogu.">
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href={url('/')}>Anasayfa</a> / Blog</div>
+      <span class="eyebrow">Bilgi Bankası</span>
+      <h1 class="mt-2">Agrotech Blog</h1>
+      <p class="lead mt-2" style="max-width:60ch">
+        Akıllı tarımı sahaya indiren rehberler: sulamadan seraya, sensörlerden
+        gübrelemeye kadar üreticiye doğrudan fayda sağlayan içerikler.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <!-- Kategori filtreleri -->
+      <div class="flex gap-2 wrap" style="margin-bottom:36px; gap:10px;">
+        <button class="btn btn-primary cat-btn" data-cat="all" style="padding:9px 18px">Tümü</button>
+        {categories.map((c) => (
+          <button class="btn btn-ghost cat-btn" data-cat={c} style="padding:9px 18px">{c}</button>
+        ))}
+      </div>
+
+      <!-- Öne çıkan -->
+      <a href={url(`/blog/${featured.slug}`)} class="card post-item" data-cat={featured.data.category}
+         style={`display:grid; grid-template-columns:1fr 1fr; gap:0; padding:0; overflow:hidden; margin-bottom:36px;`}>
+        <div class="thumb" style={`min-height:280px; display:grid; place-items:center; background:linear-gradient(150deg, ${featured.data.coverColor}, var(--primary-700));`}>
+          <span style="font-family:var(--font-head);font-weight:800;font-size:3.5rem;color:rgba(255,255,255,.85)">{featured.data.title.charAt(0)}</span>
+        </div>
+        <div style="padding:40px;display:flex;flex-direction:column;justify-content:center">
+          <div class="post-meta"><span class="tag">{featured.data.category}</span><span>{formatDate(featured.data.pubDate)}</span></div>
+          <h2 style="font-size:1.8rem;margin:8px 0 12px">{featured.data.title}</h2>
+          <p class="muted">{featured.data.description}</p>
+          <span class="readmore mt-3">Yazıyı oku <Icon name="arrow" style="width:16px;height:16px" /></span>
+        </div>
+      </a>
+
+      <!-- Liste -->
+      <div class="grid cols-3" id="postGrid">
+        {rest.map((post) => (
+          <article class="card post-card post-item" data-cat={post.data.category}>
+            <a href={url(`/blog/${post.slug}`)} class="thumb" style={`background:linear-gradient(150deg, ${post.data.coverColor}, var(--primary-700))`}>
+              <span>{post.data.title.charAt(0)}</span>
+            </a>
+            <div class="body">
+              <div class="post-meta"><span class="tag">{post.data.category}</span><span>{formatDate(post.data.pubDate)}</span></div>
+              <h3><a href={url(`/blog/${post.slug}`)}>{post.data.title}</a></h3>
+              <p>{post.data.description}</p>
+              <a class="readmore" href={url(`/blog/${post.slug}`)}>Devamını oku <Icon name="arrow" style="width:15px;height:15px" /></a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const btns = document.querySelectorAll('.cat-btn');
+    const items = document.querySelectorAll('.post-item');
+    btns.forEach((btn) => btn.addEventListener('click', () => {
+      const cat = btn.getAttribute('data-cat');
+      btns.forEach((b) => { b.classList.remove('btn-primary'); b.classList.add('btn-ghost'); });
+      btn.classList.add('btn-primary'); btn.classList.remove('btn-ghost');
+      items.forEach((it) => {
+        const show = cat === 'all' || it.getAttribute('data-cat') === cat;
+        (it as HTMLElement).style.display = show ? '' : 'none';
+      });
+    }));
+  </script>
+</BaseLayout>

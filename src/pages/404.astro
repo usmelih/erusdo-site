@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { url } from '../utils';
+---
+<BaseLayout title="Sayfa bulunamadı" noindex={true}>
+  <section class="section center" style="padding-block:clamp(80px,12vw,140px)">
+    <div class="container narrow">
+      <span class="eyebrow">404</span>
+      <h1 class="mt-2" style="font-size:clamp(2.4rem,7vw,4rem)">Bu tarla henüz ekilmemiş</h1>
+      <p class="lead mt-2">Aradığınız sayfayı bulamadık. Anasayfaya dönüp tekrar deneyebilir ya da blogumuza göz atabilirsiniz.</p>
+      <div class="flex gap-2 wrap mt-4" style="justify-content:center">
+        <a class="btn btn-primary btn-lg" href={url('/')}>Anasayfaya dön</a>
+        <a class="btn btn-ghost btn-lg" href={url('/blog')}>Blogu keşfet</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

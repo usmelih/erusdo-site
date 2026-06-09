@@ -1,0 +1,155 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import { site, services } from '../data/site';
+import { url } from '../utils';
+
+const mapSrc = `https://www.google.com/maps?q=${site.geo.lat},${site.geo.lng}&hl=tr&z=15&output=embed`;
+---
+<BaseLayout title="İletişim" description={`Erusdo ile iletişime geçin. ${site.address.full} · ${site.phone} · ${site.email}. Ücretsiz saha analizi için formu doldurun.`}>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href={url('/')}>Anasayfa</a> / İletişim</div>
+      <span class="eyebrow">İletişim</span>
+      <h1 class="mt-2">Konuşalım, tarlanıza değer katalım</h1>
+      <p class="lead mt-2" style="max-width:58ch">
+        Ücretsiz saha analizi, fiyat teklifi veya merak ettikleriniz için
+        formu doldurun ya da doğrudan arayın. En kısa sürede dönüş yapıyoruz.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- FORM -->
+        <div class="card" style="padding:32px">
+          <h2 style="font-size:1.5rem">Bize yazın</h2>
+          <p class="muted mt-1" style="margin-bottom:24px">Aşağıdaki formu doldurun, 24 saat içinde size dönelim.</p>
+
+          <!--
+            ⚠️ FORM GÖNDERİMİ: Bu form statik sitede çalışması için ücretsiz bir
+            form servisi kullanır. Aşağıdaki action adresini kendi servisinizle
+            değiştirin:
+              • Formspree:  https://formspree.io  → "https://formspree.io/f/XXXX"
+              • Web3Forms:  https://web3forms.com  (access_key alanını kullanın)
+            Servis ayarlanana kadar form WhatsApp/e-postaya yönlendirme yapar.
+          -->
+          <form id="contactForm" action="https://formspree.io/f/REPLACE_ID" method="POST">
+            <div class="field">
+              <label for="name">Ad Soyad *</label>
+              <input id="name" name="name" type="text" required placeholder="Adınız Soyadınız" />
+            </div>
+            <div class="grid cols-2" style="gap:0 18px">
+              <div class="field">
+                <label for="phone">Telefon *</label>
+                <input id="phone" name="phone" type="tel" required placeholder="05xx xxx xx xx" />
+              </div>
+              <div class="field">
+                <label for="email">E-posta</label>
+                <input id="email" name="email" type="email" placeholder="ornek@eposta.com" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="service">İlgilendiğiniz hizmet</label>
+              <select id="service" name="service">
+                <option value="">Seçiniz…</option>
+                {services.map((s) => <option value={s.title}>{s.title}</option>)}
+                <option value="Diğer">Diğer / Emin değilim</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">Mesajınız *</label>
+              <textarea id="message" name="message" required placeholder="Arazinizden, ürününüzden ve ihtiyacınızdan kısaca bahsedin…"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Gönder <Icon name="arrow" style="width:18px;height:18px" /></button>
+            <p id="formNote" class="muted" style="font-size:.85rem;margin-top:12px;text-align:center"></p>
+          </form>
+        </div>
+
+        <!-- BİLGİLER -->
+        <div>
+          <div class="card" style="padding:30px">
+            <div class="info-row">
+              <span class="ic"><Icon name="pin" /></span>
+              <div><b>Adres</b><a href={site.mapDirectionsUrl} target="_blank" rel="noopener">{site.address.full}</a></div>
+            </div>
+            <div class="info-row">
+              <span class="ic"><Icon name="phone" /></span>
+              <div><b>Telefon</b><a href={site.phoneHref}>{site.phone}</a></div>
+            </div>
+            <div class="info-row">
+              <span class="ic"><Icon name="whatsapp" /></span>
+              <div><b>WhatsApp</b><a href={site.whatsappHref} target="_blank" rel="noopener">{site.whatsapp}</a></div>
+            </div>
+            <div class="info-row">
+              <span class="ic"><Icon name="mail" /></span>
+              <div><b>E-posta</b><a href={site.emailHref}>{site.email}</a></div>
+            </div>
+            <div class="info-row">
+              <span class="ic"><Icon name="clock" /></span>
+              <div>
+                <b>Çalışma Saatleri</b>
+                {site.hours.map((h) => <span style="display:block">{h.day}: {h.time}</span>)}
+              </div>
+            </div>
+          </div>
+
+          <div class="flex gap-2 mt-3 wrap">
+            <a class="btn btn-primary" href={site.whatsappHref} target="_blank" rel="noopener" style="flex:1"><Icon name="whatsapp" style="width:18px;height:18px" /> WhatsApp</a>
+            <a class="btn btn-ghost" href={site.phoneHref} style="flex:1"><Icon name="phone" style="width:18px;height:18px" /> Hemen Ara</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HARİTA -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="section-head" style="margin-bottom:20px">
+        <span class="eyebrow">Konum</span>
+        <h2 class="mt-2" style="font-size:1.8rem">Bizi haritada bulun</h2>
+      </div>
+      <iframe
+        class="map-embed"
+        src={mapSrc}
+        title={`${site.legalName} konumu`}
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+      ></iframe>
+      <div class="center mt-3">
+        <a class="btn btn-ghost" href={site.mapDirectionsUrl} target="_blank" rel="noopener"><Icon name="pin" style="width:18px;height:18px" /> Yol tarifi al</a>
+      </div>
+    </div>
+  </section>
+
+  <script define:vars={{ wa: site.whatsappHref }}>
+    const form = document.getElementById('contactForm');
+    const note = document.getElementById('formNote');
+    form?.addEventListener('submit', async (e) => {
+      // Formspree ID'si ayarlanmamışsa WhatsApp'a yönlendir.
+      if (form.action.includes('REPLACE_ID')) {
+        e.preventDefault();
+        const data = new FormData(form);
+        const text = encodeURIComponent(
+          `Merhaba, Erusdo'dan bilgi almak istiyorum.%0A` +
+          `Ad: ${data.get('name') || ''}%0ATelefon: ${data.get('phone') || ''}%0A` +
+          `Hizmet: ${data.get('service') || ''}%0AMesaj: ${data.get('message') || ''}`
+        );
+        window.open(`${wa}?text=${text}`, '_blank');
+        note.textContent = 'Form servisi henüz bağlanmadı; WhatsApp üzerinden yönlendirildiniz.';
+        return;
+      }
+      // Formspree bağlıysa AJAX gönderimi.
+      e.preventDefault();
+      note.textContent = 'Gönderiliyor…';
+      try {
+        const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+        if (res.ok) { form.reset(); note.textContent = 'Teşekkürler! Mesajınız bize ulaştı, en kısa sürede dönüş yapacağız.'; }
+        else { note.textContent = 'Bir hata oluştu. Lütfen telefon veya WhatsApp ile ulaşın.'; }
+      } catch { note.textContent = 'Bağlantı hatası. Lütfen telefon veya WhatsApp ile ulaşın.'; }
+    });
+  </script>
+</BaseLayout>

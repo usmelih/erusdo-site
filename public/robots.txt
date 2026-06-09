@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://usmelih.github.io/erusdo-site/sitemap-index.xml

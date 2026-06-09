@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#15623f"/>
+      <stop offset="1" stop-color="#0a2c1c"/>
+    </linearGradient>
+    <pattern id="leaf" width="90" height="90" patternUnits="userSpaceOnUse">
+      <path d="M45 16c-15 0-27 10-27 27 0 15 12 27 27 27 0-13 0-27-17-37 15 2 22 10 27 20 1-3 1-7 1-10 0-15-10-27-11-27Z" fill="#ffffff" opacity="0.05"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#leaf)"/>
+  <g transform="translate(90,210)">
+    <rect width="84" height="84" rx="22" fill="#9cc23f"/>
+    <path d="M42 20c-12 0-22 8-22 22 0 12 8 22 22 22 0-10 0-22-14-30 12 2 18 8 22 16 2-2 2-6 2-8 0-12-8-22-10-22Z" fill="#0a2c1c"/>
+  </g>
+  <text x="200" y="255" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="34" font-weight="700" fill="#9cc23f" letter-spacing="4">ERUSDO · AGROTECH</text>
+  <text x="90" y="360" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="76" font-weight="800" fill="#ffffff">Akıllı Tarım</text>
+  <text x="90" y="448" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="76" font-weight="800" fill="#ffffff">Teknolojileri</text>
+  <text x="90" y="528" font-family="Inter, Arial, sans-serif" font-size="30" fill="#cfe0d5">Akıllı sulama · Sera otomasyonu · IoT sensörler · Daha çok verim</text>
+</svg>

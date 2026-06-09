@@ -1,0 +1,19 @@
+{
+  "name": "erusdo-site",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Erusdo Agrotech — kurumsal web sitesi (Astro)",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/rss": "^4.0.7",
+    "@astrojs/sitemap": "3.2.1",
+    "astro": "^4.16.0",
+    "sharp": "^0.33.5"
+  }
+}

@@ -1,0 +1,120 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+import { site } from '../../data/site';
+import { url, formatDate } from '../../utils';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({ params: { slug: post.slug }, props: { post } }));
+}
+
+type Props = { post: CollectionEntry<'blog'> };
+const { post } = Astro.props;
+const { Content } = await post.render();
+const { data } = post;
+
+const words = post.body.split(/\s+/).length;
+const readingTime = data.readingTime ?? Math.max(2, Math.round(words / 200));
+
+const all = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const related = all.filter((p) => p.slug !== post.slug && p.data.category === data.category).slice(0, 3);
+const fallback = all.filter((p) => p.slug !== post.slug).slice(0, 3);
+const relatedPosts = (related.length ? related : fallback).slice(0, 3);
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: data.title,
+  description: data.description,
+  datePublished: data.pubDate.toISOString(),
+  dateModified: (data.updatedDate ?? data.pubDate).toISOString(),
+  author: { '@type': 'Organization', name: data.author },
+  publisher: { '@type': 'Organization', name: site.legalName },
+  mainEntityOfPage: new URL(Astro.url.pathname, Astro.site).href,
+  articleSection: data.category,
+  keywords: data.tags.join(', '),
+};
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Anasayfa', item: new URL(url('/'), Astro.site).href },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: new URL(url('/blog'), Astro.site).href },
+    { '@type': 'ListItem', position: 3, name: data.title },
+  ],
+};
+---
+<BaseLayout
+  title={data.title}
+  description={data.description}
+  type="article"
+  article={{ published: data.pubDate, modified: data.updatedDate, author: data.author, tags: data.tags }}
+>
+  <article>
+    <div class="article-hero">
+      <div class="container narrow">
+        <div class="breadcrumb"><a href={url('/')}>Anasayfa</a> / <a href={url('/blog')}>Blog</a> / {data.category}</div>
+        <span class="tag">{data.category}</span>
+        <h1 class="mt-2">{data.title}</h1>
+        <p class="lead mt-2">{data.description}</p>
+        <div class="post-meta mt-3" style="font-size:.92rem">
+          <span>{data.author}</span><span>·</span>
+          <span>{formatDate(data.pubDate)}</span><span>·</span>
+          <span>{readingTime} dk okuma</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="container narrow">
+        <div class="prose">
+          <Content />
+        </div>
+
+        {data.tags.length > 0 && (
+          <div class="flex gap-2 wrap mt-4" style="gap:8px;padding-top:24px;border-top:1px solid var(--border)">
+            {data.tags.map((t) => <span class="tag">#{t}</span>)}
+          </div>
+        )}
+
+        <!-- Yazar/CTA kutusu -->
+        <div class="card mt-4" style="display:flex;gap:18px;align-items:center;flex-wrap:wrap;background:var(--primary-tint);border-color:transparent">
+          <div style="width:56px;height:56px;border-radius:16px;background:var(--primary);color:#fff;display:grid;place-items:center;flex:none"><Icon name="leaf" style="width:28px;height:28px" /></div>
+          <div style="flex:1;min-width:200px">
+            <b style="font-family:var(--font-head);font-size:1.1rem">Bu konuda yardıma mı ihtiyacınız var?</b>
+            <p class="muted" style="font-size:.95rem">Erusdo ekibi sahanızı ücretsiz inceleyip size özel çözüm önersin.</p>
+          </div>
+          <a class="btn btn-primary" href={url('/iletisim')}>Teklif Al</a>
+        </div>
+      </div>
+    </div>
+
+    {relatedPosts.length > 0 && (
+      <div class="section bg-soft">
+        <div class="container">
+          <div class="section-head"><span class="eyebrow">İlgili Yazılar</span><h2 class="mt-2" style="font-size:1.8rem">Bunlar da ilginizi çekebilir</h2></div>
+          <div class="grid cols-3">
+            {relatedPosts.map((p) => (
+              <article class="card post-card">
+                <a href={url(`/blog/${p.slug}`)} class="thumb" style={`background:linear-gradient(150deg, ${p.data.coverColor}, var(--primary-700))`}>
+                  <span>{p.data.title.charAt(0)}</span>
+                </a>
+                <div class="body">
+                  <div class="post-meta"><span class="tag">{p.data.category}</span></div>
+                  <h3><a href={url(`/blog/${p.slug}`)}>{p.data.title}</a></h3>
+                  <a class="readmore" href={url(`/blog/${p.slug}`)}>Devamını oku <Icon name="arrow" style="width:15px;height:15px" /></a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    )}
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify(articleLd)} slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} slot="head" />
+</BaseLayout>
