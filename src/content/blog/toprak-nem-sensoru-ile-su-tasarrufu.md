@@ -56,4 +56,4 @@ Sensörler, kök bölgesini temsil edecek derinliklere yerleştirilir. Genellikl
 
 Toprak nem sensörü, akıllı sulamanın temel taşıdır. Tahmini ortadan kaldırır, suyu korur, verimi artırır ve maliyeti düşürür. Üstelik mevcut damla veya yağmurlama altyapınıza entegre edilebilir.
 
-Sahanıza kaç sensör, hangi tip ve nereye gerektiğini ücretsiz saha analizimizle netleştirelim. [İletişime geçin](/iletisim), tarlanızın suyunu birlikte akıllıca yönetelim.
+Erusdo olarak seralarımızda toprak nem takibine dayalı, suyu koruyan üretim yapıyoruz. Bu yöntemle yetiştirdiğimiz taze ve hijyenik ürünler için [bizimle iletişime geçin](/iletisim).

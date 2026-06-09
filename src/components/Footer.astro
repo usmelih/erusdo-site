@@ -1,5 +1,5 @@
 ---
-import { site, nav, services } from '../data/site';
+import { site, nav, products } from '../data/site';
 import { url } from '../utils';
 import Icon from './Icon.astro';
 const year = 2026; // build sabiti
@@ -38,10 +38,10 @@ const socials = [
       </div>
 
       <div>
-        <h4>Hizmetler</h4>
+        <h4>Ürünlerimiz</h4>
         <ul class="f-links">
-          {services.slice(0, 6).map((s) => (
-            <li><a href={url(`/hizmetler#${s.slug}`)}>{s.title}</a></li>
+          {products.slice(0, 6).map((s) => (
+            <li><a href={url(`/urunler#${s.slug}`)}>{s.title}</a></li>
           ))}
         </ul>
       </div>

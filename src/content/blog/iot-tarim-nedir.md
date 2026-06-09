@@ -51,4 +51,4 @@ Kesinlikle. IoT çözümleri ölçeklenebilirdir; tek bir sensör ve basit bir p
 
 IoT tarım, üretimi sezgiden veriye taşıyan bir dönüşümdür. Doğru kurulduğunda kaynakları korur, verimi artırır ve üreticiye tarlasının kontrolünü her an elinde tutma imkânı verir.
 
-Tarlanız için IoT yolculuğuna başlamak isterseniz, [Erusdo ekibi](/iletisim) size en uygun ve ölçeklenebilir çözümü tasarlasın.
+Erusdo olarak seralarımızda bu teknolojilerden faydalanarak üretimi sürekli izliyor ve iyileştiriyoruz. Bu özenle yetiştirdiğimiz ürünler için [bizimle iletişime geçin](/iletisim).

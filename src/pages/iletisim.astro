@@ -1,20 +1,20 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Icon from '../components/Icon.astro';
-import { site, services } from '../data/site';
+import { site, products, mapEmbedSrc } from '../data/site';
 import { url } from '../utils';
 
-const mapSrc = `https://www.google.com/maps?q=${site.geo.lat},${site.geo.lng}&hl=tr&z=15&output=embed`;
+const mapSrc = mapEmbedSrc;
 ---
 <BaseLayout title="İletişim" description={`Erusdo ile iletişime geçin. ${site.address.full} · ${site.phone} · ${site.email}. Ücretsiz saha analizi için formu doldurun.`}>
   <section class="page-hero">
     <div class="container">
       <div class="breadcrumb"><a href={url('/')}>Anasayfa</a> / İletişim</div>
       <span class="eyebrow">İletişim</span>
-      <h1 class="mt-2">Konuşalım, tarlanıza değer katalım</h1>
+      <h1 class="mt-2">Sipariş ve tedarik için bize ulaşın</h1>
       <p class="lead mt-2" style="max-width:58ch">
-        Ücretsiz saha analizi, fiyat teklifi veya merak ettikleriniz için
-        formu doldurun ya da doğrudan arayın. En kısa sürede dönüş yapıyoruz.
+        Toptan tedarik, sipariş, fiyat ya da merak ettikleriniz için formu
+        doldurun veya doğrudan arayın. En kısa sürede dönüş yapıyoruz.
       </p>
     </div>
   </section>
@@ -51,16 +51,19 @@ const mapSrc = `https://www.google.com/maps?q=${site.geo.lat},${site.geo.lng}&hl
               </div>
             </div>
             <div class="field">
-              <label for="service">İlgilendiğiniz hizmet</label>
+              <label for="service">Talebiniz</label>
               <select id="service" name="service">
                 <option value="">Seçiniz…</option>
-                {services.map((s) => <option value={s.title}>{s.title}</option>)}
-                <option value="Diğer">Diğer / Emin değilim</option>
+                <option value="Toptan tedarik">Toptan tedarik / düzenli sipariş</option>
+                <option value="Bireysel sipariş">Bireysel sipariş</option>
+                {products.map((s) => <option value={`Ürün: ${s.title}`}>{s.title}</option>)}
+                <option value="İş birliği">İş birliği</option>
+                <option value="Diğer">Diğer / Bilgi almak istiyorum</option>
               </select>
             </div>
             <div class="field">
               <label for="message">Mesajınız *</label>
-              <textarea id="message" name="message" required placeholder="Arazinizden, ürününüzden ve ihtiyacınızdan kısaca bahsedin…"></textarea>
+              <textarea id="message" name="message" required placeholder="İhtiyacınız olan ürün, miktar ve teslimat bölgenizden kısaca bahsedin…"></textarea>
             </div>
             <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Gönder <Icon name="arrow" style="width:18px;height:18px" /></button>
             <p id="formNote" class="muted" style="font-size:.85rem;margin-top:12px;text-align:center"></p>

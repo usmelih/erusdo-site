@@ -44,8 +44,8 @@ Akıllı sulama; seralar, meyve bahçeleri, bağlar, açık tarla sebzeciliği v
 
 Sistem maliyeti; arazi büyüklüğüne, sensör sayısına ve otomasyon seviyesine göre değişir. Küçük ölçekli bir kurulum mütevazı bir bütçeyle başlarken, geniş araziler için yatırım ölçeklenir. Önemli olan, kazanılan su ve verim üzerinden hesaplanan **geri dönüş süresidir** — ki bu çoğu projede oldukça kısadır.
 
-## Nasıl başlamalı?
+## Erusdo'da nasıl uyguluyoruz?
 
-Akıllı sulamaya geçişin ilk adımı **saha analizidir**: toprak yapınız, su kaynağınız, ürün deseniniz ve mevcut altyapınız incelenir. Buna göre size özel bir sistem tasarlanır.
+Erusdo olarak kendi seralarımızda, topraksız tarım sistemimizin kalbinde tam da bu prensibi kullanıyoruz: bitkiye tam ihtiyacı kadar su ve besin vererek hem su tasarrufu sağlıyor hem de daha sağlıklı, daha lezzetli ürünler yetiştiriyoruz.
 
-Erusdo olarak sahanızı ücretsiz inceliyor, ihtiyacınıza en uygun akıllı sulama çözümünü net bir bütçe ve geri dönüş planıyla birlikte sunuyoruz. Tarlanızın su geleceğini birlikte güvence altına alalım.
+Bu özenle ürettiğimiz taze ve hijyenik sebze-meyveler için [bizimle iletişime geçin](/iletisim).

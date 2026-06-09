@@ -5,27 +5,27 @@ import { site, stats } from '../data/site';
 import { url } from '../utils';
 
 const values = [
-  { icon: 'target', title: 'Üretici Odaklılık', text: 'Her çözümü üreticinin gerçek ihtiyacı ve bütçesi etrafında tasarlarız. Teknoloji araçtır, amaç verimdir.' },
-  { icon: 'shield', title: 'Güven & Şeffaflık', text: 'Net fiyat, net plan, net sonuç. Vaat etmediğimizi satmaz, kurduğumuzun arkasında dururuz.' },
-  { icon: 'seedling', title: 'Sürdürülebilirlik', text: 'Suyu, toprağı ve enerjiyi koruyan çözümler üretiriz. Bugünün verimi yarının kaynağından çalmamalı.' },
-  { icon: 'cpu', title: 'Sürekli Gelişim', text: 'Tarım teknolojisi hızla değişiyor; biz de sahayı en güncel yöntem ve cihazlarla buluşturuyoruz.' },
+  { icon: 'shield', title: 'Sağlık & Hijyen', text: 'Sofraya gelen her ürünün temiz, güvenli ve kalıntısız olması bizim için pazarlık konusu değildir.' },
+  { icon: 'target', title: 'Kalitede Süreklilik', text: 'Yıl boyu aynı tazelik, aynı standart. Alıcılarımız her teslimatta aynı kaliteyi bulacağını bilir.' },
+  { icon: 'seedling', title: 'Sürdürülebilirlik', text: 'Suyu koruyan, doğaya saygılı topraksız üretim. Bugünün ürünü, yarının kaynağından çalmamalı.' },
+  { icon: 'users', title: 'Güvenilir Tedarik', text: 'Sözümüzün arkasında dururuz. Zamanında, eksiksiz ve düzenli tedarik işimizin temelidir.' },
 ];
 const team = [
-  { name: 'Ziraat Mühendisleri', role: 'Saha & Agronomi', initials: 'ZM' },
-  { name: 'Yazılım & IoT Ekibi', role: 'Sensör & Platform', initials: 'IoT' },
-  { name: 'Kurulum Teknisyenleri', role: 'Devreye Alma & Bakım', initials: 'KT' },
+  { name: 'Üretim & Agronomi', role: 'Yetiştirme ve bitki sağlığı', initials: 'ÜA' },
+  { name: 'Sera Ekibi', role: 'Bakım ve iklim yönetimi', initials: 'SE' },
+  { name: 'Hasat & Sevkiyat', role: 'Paketleme ve teslimat', initials: 'HS' },
 ];
 ---
-<BaseLayout title="Hakkımızda" description="Erusdo; ziraat mühendisleri, yazılımcılar ve saha teknisyenlerinden oluşan ekibiyle Türkiye’de akıllı tarımı yaygınlaştıran bir agrotech şirketidir.">
+<BaseLayout title="Hakkımızda" description="Erusdo, Çine/Aydın'da sera topraksız (hidroponik) tarım yöntemiyle taze ve hijyenik sebze-meyve üreten bir aile üreticisidir. Hikayemizi ve değerlerimizi keşfedin.">
   <section class="page-hero">
     <div class="container">
       <div class="breadcrumb"><a href={url('/')}>Anasayfa</a> / Hakkımızda</div>
       <span class="eyebrow">Hakkımızda</span>
-      <h1 class="mt-2">Teknolojiyi toprakla buluşturuyoruz</h1>
+      <h1 class="mt-2">Toprağa değil, özene dayanan üretim</h1>
       <p class="lead mt-2" style="max-width:62ch">
-        Erusdo, tarımın geleceğine inanan ziraat mühendisleri ve teknoloji
-        uzmanlarının bir araya gelmesiyle kuruldu. Amacımız net: üreticinin
-        işini kolaylaştırmak, verimini ve gelirini artırmak.
+        Erusdo, Çine/Aydın’da modern seralarında topraksız tarım yöntemiyle taze
+        ve hijyenik sebze-meyve üreten bir üreticidir. Amacımız net: sofralara
+        en temiz, en taze ve en lezzetli ürünü ulaştırmak.
       </p>
     </div>
   </section>
@@ -35,33 +35,34 @@ const team = [
     <div class="container">
       <div class="grid" style="grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center;">
         <div class="prose" style="font-size:1.08rem">
-          <h2>Tarladaki bir sorundan doğduk</h2>
+          <h2>Daha temiz bir ürün arayışıyla başladık</h2>
           <p>
-            Erusdo’nun hikayesi, üreticilerin her gün yaşadığı somut bir sorunla
-            başladı: “Ne zaman, ne kadar sulamalıyım?” Tahmine dayalı kararlar su
-            israfına, düşük verime ve gereksiz maliyete yol açıyordu.
+            Erusdo’nun hikayesi basit bir inançla başladı: insanlar daha temiz,
+            daha taze ve daha güvenli ürün hak ediyor. Geleneksel tarımın
+            getirdiği toprak kaynaklı riskler ve kalıntı endişesi, bizi farklı
+            bir yol aramaya itti.
           </p>
           <p>
-            {site.foundingYear} yılından bu yana toprağı dinleyen sensörler, suyu
-            akıllıca yöneten sistemler ve sahayı anlayan bir ekip kurduk. Bugün
-            seralardan açık tarlalara, bağ-bahçeden fidanlıklara kadar pek çok
-            işletmede verinin tarımı nasıl dönüştürdüğünü birlikte görüyoruz.
+            {site.foundingYear} yılından bu yana, modern seralarımızda topraksız
+            (hidroponik) tarım yöntemiyle üretim yapıyoruz. Suyu ve besini
+            kontrol ederek; daha az ilaçla, kalıntısız ve yıl boyu aynı kalitede
+            sebze ve meyve yetiştiriyoruz.
           </p>
           <p>
-            Bizim için başarı; bir üreticinin “artık tarlayı telefonumdan
-            yönetiyorum ve daha çok kazanıyorum” demesidir.
+            Bizim için başarı; ürünümüzü alan bir ailenin “bu gerçekten taze ve
+            temiz” demesi, bir esnafın bize güvenerek tedariğini sürdürmesidir.
           </p>
         </div>
         <div class="card" style="background:linear-gradient(160deg,var(--primary-700),#0a2c1c); color:#fff; border:none;">
           <h3 style="color:#fff">Misyonumuz</h3>
           <p style="color:#cfe0d5; margin-bottom:24px">
-            Akıllı tarım teknolojilerini her ölçekten üretici için erişilebilir,
-            anlaşılır ve karlı hale getirmek.
+            Topraksız tarımın gücüyle; hijyenik, kalıntısız ve taze ürünleri
+            herkes için erişilebilir kılmak.
           </p>
           <h3 style="color:#fff">Vizyonumuz</h3>
           <p style="color:#cfe0d5">
-            Türkiye’de veriye dayalı, sürdürülebilir tarımı standart haline
-            getiren öncü agrotech markası olmak.
+            Bölgemizde sürdürülebilir ve güvenilir sera üretiminin örnek
+            gösterilen markası olmak.
           </p>
         </div>
       </div>
@@ -101,8 +102,8 @@ const team = [
     <div class="container">
       <div class="section-head center">
         <span class="eyebrow">Ekibimiz</span>
-        <h2>Sahada ve ekranda yanınızda</h2>
-        <p>Farklı disiplinlerden uzmanlar, tek bir amaç için: tarlanızdan en yüksek verimi almak.</p>
+        <h2>Üretimin her aşamasında özen</h2>
+        <p>Fideden hasada, paketlemeden teslimata kadar her aşamada tek bir amaç için çalışıyoruz: en taze ve en temiz ürün.</p>
       </div>
       <div class="grid cols-3">
         {team.map((t) => (
@@ -119,8 +120,8 @@ const team = [
   <section class="section">
     <div class="container">
       <div class="cta-band">
-        <h2>Birlikte çalışalım</h2>
-        <p>Akıllı tarıma geçiş için doğru ortaktasınız. Tanışalım, sahanızı görelim ve potansiyelinizi birlikte keşfedelim.</p>
+        <h2>Taze ürün, güvenilir tedarik</h2>
+        <p>Market, manav, restoran ve toptan alıcılar için düzenli ve standart kalitede tedarik sağlıyoruz. Tanışalım, ihtiyacınızı birlikte planlayalım.</p>
         <a class="btn btn-white btn-lg" href={url('/iletisim')}>İletişime geçin</a>
       </div>
     </div>

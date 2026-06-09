@@ -57,4 +57,4 @@ En mantıklı başlangıç, en çok kayıp yaşadığınız alandır — genelli
 
 Hassas tarım, tarımı tahminden veriye taşıyan bir dönüşümdür. Girdiyi azaltır, verimi artırır, çevreyi korur ve üreticiye tarlasının her köşesini yönetme gücü verir. Geleceğin tarımı, hassas tarımdır.
 
-Hassas tarıma adım atmak için [Erusdo ekibiyle](/iletisim) tanışın; size en uygun başlangıç noktasını birlikte belirleyelim.
+Erusdo olarak bu veriye dayalı yaklaşımı kendi sera üretimimizde uyguluyoruz. Özenle yetiştirdiğimiz taze ürünler için [bizimle iletişime geçin](/iletisim).

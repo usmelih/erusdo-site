@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import { products, site } from '../data/site';
+import { url } from '../utils';
+
+const faqs = [
+  { q: 'Toptan satış yapıyor musunuz?', a: 'Evet. Market, manav, restoran, otel ve toptancılara düzenli ve standart kalitede tedarik sağlıyoruz. İhtiyacınıza göre periyodik teslimat planlayabiliriz.' },
+  { q: 'Ürünleriniz organik mi?', a: 'Ürünlerimiz topraksız (hidroponik) yöntemle, kontrollü sera ortamında yetişir. Bu sayede zararlı baskısı düşük olduğundan çok az ilaçla, kalıntısız üretim yapıyoruz.' },
+  { q: 'Teslimat ve sevkiyat nasıl yapılıyor?', a: 'Ürünler en taze hâliyle hasat edilip hijyenik koşullarda paketlenir ve hızla sevk edilir. Bölge ve miktar bilgisiyle teslimat detaylarını birlikte planlarız.' },
+  { q: 'Yıl boyu ürün bulabilir miyim?', a: 'Evet. Kontrollü sera üretimi sayesinde mevsime bağlı kalmadan, 12 ay boyunca taze ve standart kalitede ürün temin edebiliyoruz.' },
+  { q: 'Minimum sipariş miktarı var mı?', a: 'Sipariş koşulları ürün ve alıcı tipine göre değişir. En doğru bilgi için bizimle iletişime geçmeniz yeterli; size özel bir tedarik planı çıkaralım.' },
+];
+---
+<BaseLayout title="Ürünlerimiz" description="Erusdo'nun sera topraksız tarımla ürettiği taze ve hijyenik ürünler: domates, salatalık, biber, yapraklı yeşillikler, çilek ve aromatik bitkiler. Toptan tedarik.">
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href={url('/')}>Anasayfa</a> / Ürünlerimiz</div>
+      <span class="eyebrow">Ürünlerimiz</span>
+      <h1 class="mt-2">Serada özenle yetişen taze ürünler</h1>
+      <p class="lead mt-2" style="max-width:60ch">
+        Topraksız tarım yöntemiyle yetiştirdiğimiz, kalıntısız ve yıl boyu taze
+        ürünlerimiz. Tümü hijyenik koşullarda üretilir, en taze hâliyle sofranıza
+        ulaşır.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid" style="gap:28px">
+        {products.map((s, i) => (
+          <article id={s.slug} class="card" style="scroll-margin-top:100px; padding:0; overflow:hidden;">
+            <div class="grid" style={`grid-template-columns:${i % 2 === 0 ? '0.42fr 0.58fr' : '0.58fr 0.42fr'}; gap:0; align-items:stretch;`}>
+              <div style={`order:${i % 2 === 0 ? 0 : 1}; background:linear-gradient(150deg, var(--primary), var(--primary-700)); min-height:240px; display:grid; place-items:center; position:relative;`}>
+                <div style="color:#fff;text-align:center;padding:30px">
+                  <div style="width:72px;height:72px;border-radius:20px;background:rgba(255,255,255,.14);display:grid;place-items:center;margin:0 auto 16px">
+                    <Icon name={s.icon} style="width:36px;height:36px" />
+                  </div>
+                  <span style="font-family:var(--font-head);font-weight:700;letter-spacing:.1em;opacity:.8;font-size:.8rem">{s.title.toUpperCase()}</span>
+                </div>
+              </div>
+              <div style="padding:38px">
+                <h2 style="font-size:1.6rem">{s.title}</h2>
+                <p class="muted mt-2" style="font-size:1.05rem">{s.summary}</p>
+                <ul class="ticks mt-3">
+                  {s.features.map((f) => <li>{f}</li>)}
+                </ul>
+                <a class="btn btn-ghost mt-3" href={url('/iletisim')}>Bu ürün için sipariş/teklif <Icon name="arrow" style="width:16px;height:16px" /></a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <p class="center muted mt-4" style="font-size:.95rem">
+        Ürün gamımız mevsime ve üretim planına göre genişleyebilir. Aradığınız bir ürün için
+        <a href={url('/iletisim')} style="color:var(--primary);font-weight:600">bize danışın</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- SSS -->
+  <section class="section bg-soft">
+    <div class="container narrow">
+      <div class="section-head center">
+        <span class="eyebrow">Sıkça Sorulan Sorular</span>
+        <h2>Sipariş & tedarik hakkında</h2>
+      </div>
+      <div class="faq">
+        {faqs.map((f) => (
+          <details>
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-band">
+        <h2>Düzenli, taze tedarik için bize ulaşın</h2>
+        <p>Market, manav, restoran ve toptan alıcılar için standart kalitede ürün sağlıyoruz. Size özel tedarik planı için iletişime geçin.</p>
+        <a class="btn btn-white btn-lg" href={url('/iletisim')}>Sipariş & Teklif Al</a>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  })} slot="head" />
+</BaseLayout>

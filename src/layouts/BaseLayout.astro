@@ -30,7 +30,7 @@ const ogImage = new URL(image, Astro.site).href;
 // --- JSON-LD: LocalBusiness ---
 const localBusiness = {
   '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
+  '@type': 'LocalBusiness',
   '@id': `${Astro.site}#business`,
   name: site.legalName,
   alternateName: site.name,

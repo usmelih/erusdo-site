@@ -3,7 +3,7 @@
  *  ERUSDO AGROTECH — MERKEZİ SİTE AYARLARI
  * =============================================================
  *  Sitedeki tüm iş bilgileri (iletişim, adres, harita, sosyal
- *  medya, hizmetler) BU DOSYADAN yönetilir. Değiştirmek için
+ *  medya, ürünler) BU DOSYADAN yönetilir. Değiştirmek için
  *  aşağıdaki değerleri güncellemeniz yeterli — site otomatik
  *  olarak her yerde günceller.
  *
@@ -15,37 +15,39 @@
 export const site = {
   // --- Marka ---
   name: 'Erusdo',
-  legalName: 'Erusdo Agrotech', // DÜZENLE: resmi ünvan
-  tagline: 'Akıllı Tarım Teknolojileri',
+  legalName: 'Erusdo Tarım', // DÜZENLE: resmi ünvan
+  tagline: 'Sera Topraksız Tarım',
   description:
-    'Erusdo; akıllı sulama, sera otomasyonu, IoT toprak ve iklim sensörleriyle ' +
-    'verimi artıran, su ve enerjiyi koruyan agrotech çözümleri sunar. ' +
-    'Üreticiye veriye dayalı, sürdürülebilir tarım.',
+    'Erusdo, Çine/Aydın’da sera topraksız (hidroponik) tarım yöntemiyle taze, ' +
+    'hijyenik ve lezzetli sebze ve meyve üretir. Topraksız sistemde, daha az ' +
+    'suyla, kalıntısız ve yıl boyu üretim.',
 
-  // --- İletişim (DÜZENLE) ---
-  phone: '+90 (242) 000 00 00',
-  phoneHref: 'tel:+902420000000',
-  whatsapp: '+90 532 000 00 00',
-  whatsappHref: 'https://wa.me/905320000000',
-  email: 'info@erusdo.com',
+  // --- İletişim ---
+  phone: '0542 516 61 70',
+  phoneHref: 'tel:+905425166170',
+  whatsapp: '0542 516 61 70',
+  whatsappHref: 'https://wa.me/905425166170',
+  email: 'info@erusdo.com', // DÜZENLE: gerçek e-posta adresiniz
   emailHref: 'mailto:info@erusdo.com',
 
-  // --- Adres & Harita (DÜZENLE) ---
+  // --- Adres & Harita ---
   address: {
-    street: 'Örnek Mah. Tarım Cad. No: 1',
-    district: 'Muratpaşa',
-    city: 'Antalya',
-    zip: '07000',
+    street: 'Dorumlar Mah. 4454. Sokak No: 14',
+    district: 'Çine',
+    city: 'Aydın',
+    zip: '09560',
     country: 'Türkiye',
-    full: 'Örnek Mah. Tarım Cad. No: 1, Muratpaşa / Antalya, Türkiye',
+    full: 'Dorumlar Mah. 4454. Sokak No: 14, 09560 Çine/Aydın',
   },
-  // Google Haritalar enlem/boylam (DÜZENLE: işletmenizin koordinatları)
-  geo: { lat: 36.8969, lng: 30.7133 },
-  // Google "Yol Tarifi" bağlantısı (DÜZENLE: işletme adınızla)
+  // Google Haritalar enlem/boylam (Dorumlar, Çine/Aydın — gerekirse hassas
+  // konum için Google Haritalar'dan tam koordinatı güncelleyebilirsiniz)
+  geo: { lat: 37.700676, lng: 27.969891 },
+  // Google "Yol Tarifi" bağlantısı
   mapDirectionsUrl:
-    'https://www.google.com/maps/dir/?api=1&destination=36.8969,30.7133',
-  // Google "İşletmeyi görüntüle" bağlantısı (DÜZENLE: Google Business profil linkiniz)
-  mapPlaceUrl: 'https://www.google.com/maps?q=36.8969,30.7133',
+    'https://www.google.com/maps/dir/?api=1&destination=37.700676,27.969891',
+  // Google "İşletmeyi görüntüle" bağlantısı (DÜZENLE: Google Business profiliniz
+  // oluştuğunda buraya işletme linkinizi koyun — local SEO için önemli)
+  mapPlaceUrl: 'https://www.google.com/maps?q=37.700676,27.969891',
 
   // --- Çalışma saatleri (DÜZENLE) ---
   hours: [
@@ -72,107 +74,91 @@ export const site = {
   foundingYear: '2019', // DÜZENLE
 };
 
+/**
+ * Google Haritalar embed adresi — işletmeyi haritada gömülü gösterir.
+ * Tam adres üzerinden çalışır (API anahtarı gerektirmez). İşletmenizin
+ * Google Business profili oluştuğunda, oradan alacağınız "Haritayı göm"
+ * (embed) kodundaki src adresini buraya yapıştırarak işletme adıyla
+ * etiketli, doğrulanmış bir harita gösterebilirsiniz — local SEO için ideal.
+ */
+export const mapEmbedSrc =
+  `https://www.google.com/maps?q=${encodeURIComponent(site.address.full)}&hl=tr&z=15&output=embed`;
+
 /** Ana menü */
 export const nav = [
   { label: 'Anasayfa', href: '/' },
-  { label: 'Hizmetler', href: '/hizmetler' },
+  { label: 'Ürünlerimiz', href: '/urunler' },
+  { label: 'Üretim Yöntemimiz', href: '/uretim-yontemimiz' },
   { label: 'Hakkımızda', href: '/hakkimizda' },
   { label: 'Blog', href: '/blog' },
   { label: 'İletişim', href: '/iletisim' },
 ];
 
-/** Hizmetler — anasayfa ve /hizmetler sayfasında kullanılır */
-export const services = [
+/**
+ * Ürünlerimiz — anasayfa ve /urunler sayfasında kullanılır.
+ * DÜZENLE: Erusdo'nun gerçekten ürettiği ürünleri ve mevsimlerini güncelleyin.
+ */
+export const products = [
   {
-    slug: 'akilli-sulama',
-    icon: 'droplet',
-    title: 'Akıllı Sulama Sistemleri',
-    summary:
-      'Toprak nem sensörleri ve hava durumu verisiyle çalışan otomatik sulama. ' +
-      'Suyu %40’a varan oranda koruyun, bitkiye tam ihtiyacı kadar verin.',
-    features: [
-      'Toprak nemine duyarlı otomatik vanalar',
-      'Mobil uygulamadan uzaktan kontrol',
-      'Hava durumu tahminine göre planlama',
-      'Su tüketim raporları ve uyarılar',
-    ],
-  },
-  {
-    slug: 'sera-otomasyonu',
+    slug: 'domates',
     icon: 'leaf',
-    title: 'Sera Otomasyonu',
+    title: 'Domates',
     summary:
-      'Sıcaklık, nem, CO₂ ve ışığı 7/24 izleyen ve otomatik dengeleyen ' +
-      'akıllı sera kontrol sistemleri ile yıl boyu kararlı verim.',
-    features: [
-      'İklim kontrolü (ısıtma, havalandırma, gölgeleme)',
-      'Otomatik perde ve fan yönetimi',
-      'Anlık alarm ve bildirimler',
-      'Enerji optimizasyonu',
-    ],
+      'Topraksız sistemde, dengeli besin çözeltisiyle yetişen; dolgun, aromalı ve ' +
+      'dayanıklı salkım ve kokteyl domatesler.',
+    features: ['Salkım & kokteyl çeşitleri', 'Yüksek aroma ve raf ömrü', 'Kalıntısız üretim', 'Yıl boyu temin'],
   },
   {
-    slug: 'iot-sensorler',
-    icon: 'signal',
-    title: 'IoT Tarla Sensörleri',
+    slug: 'salatalik',
+    icon: 'seedling',
+    title: 'Salatalık',
     summary:
-      'Tarlanıza yerleştirilen kablosuz sensörlerle toprak, iklim ve bitki ' +
-      'verisini gerçek zamanlı toplayın; kararlarınızı veriye dayandırın.',
-    features: [
-      'Toprak nem, sıcaklık ve EC ölçümü',
-      'Hava istasyonu entegrasyonu',
-      'LoRaWAN / GSM kablosuz iletim',
-      'Bulut panel ve geçmiş veri analizi',
-    ],
+      'Serada kontrollü iklimde yetişen, çıtır ve taze mini ile sofralık salatalıklar. ' +
+      'Topraksız tarımın hijyenik avantajıyla.',
+    features: ['Mini & sofralık çeşitler', 'Çıtır doku, taze hasat', 'Hijyenik yetiştirme', 'Düzenli tedarik'],
   },
   {
-    slug: 'toprak-yaprak-analizi',
-    icon: 'flask',
-    title: 'Toprak & Yaprak Analizi',
+    slug: 'biber',
+    icon: 'sun',
+    title: 'Biber',
     summary:
-      'Akredite laboratuvar analizleri ve uzman yorumuyla doğru gübreleme ' +
-      'programı. Fazla gübreden kaçının, maliyeti düşürün.',
-    features: [
-      'Detaylı toprak verimlilik analizi',
-      'Yaprak besin elementi analizi',
-      'Kişiye özel gübreleme reçetesi',
-      'Dönemsel takip ve raporlama',
-    ],
+      'Renkli dolmalık, sivri ve çarliston biber çeşitleri. Besin değeri korunmuş, ' +
+      'parlak ve sağlıklı ürünler.',
+    features: ['Renkli & sivri çeşitler', 'Canlı renk ve dolgunluk', 'Az ilaçlı üretim', 'Mevsim boyu hasat'],
   },
   {
-    slug: 'tarimsal-danismanlik',
-    icon: 'compass',
-    title: 'Tarımsal Danışmanlık',
+    slug: 'yaprakli-yesillikler',
+    icon: 'leaf',
+    title: 'Yapraklı Yeşillikler',
     summary:
-      'Ziraat mühendisi kadromuzla ekim deseninden hasada kadar saha ' +
-      'danışmanlığı. Doğru ürün, doğru zaman, doğru teknik.',
-    features: [
-      'Saha ziyaretleri ve yerinde teşhis',
-      'Ürün deseni ve rotasyon planlaması',
-      'Hastalık-zararlı yönetimi (IPM)',
-      'Verim ve maliyet optimizasyonu',
-    ],
+      'Marul, kıvırcık, roka ve aromatik yeşillikler. Köküyle birlikte tazeliğini ' +
+      'koruyan, topraksız hidroponik üretim.',
+    features: ['Marul, kıvırcık, roka', 'Köklü, uzun tazelik', 'Yıkamaya hazır temizlik', 'Hızlı tedarik'],
   },
   {
-    slug: 'drone-uydu-izleme',
-    icon: 'drone',
-    title: 'Drone & Uydu ile İzleme',
+    slug: 'cilek',
+    icon: 'droplet',
+    title: 'Çilek',
     summary:
-      'Çok bantlı drone ve uydu görüntüleriyle bitki sağlığı haritaları. ' +
-      'Stresli alanları erken görün, müdahaleyi noktasal yapın.',
-    features: [
-      'NDVI bitki sağlığı haritaları',
-      'Değişken oranlı (VRA) ilaçlama desteği',
-      'Alan ve rekolte tahmini',
-      'Dönemsel karşılaştırmalı raporlar',
-    ],
+      'Askılı topraksız sistemde, yerden yüksekte yetişen; tertemiz, parlak ve ' +
+      'tatlı çilekler.',
+    features: ['Yerden yüksek hijyenik üretim', 'Yüksek tat ve aroma', 'Kalıntısız hasat', 'Sezonluk taze temin'],
+  },
+  {
+    slug: 'aromatik-bitkiler',
+    icon: 'seedling',
+    title: 'Aromatik Bitkiler',
+    summary:
+      'Fesleğen, nane, maydanoz gibi taze aromatik bitkiler. Mutfaklar ve işletmeler ' +
+      'için canlı, kokulu ve dayanıklı.',
+    features: ['Fesleğen, nane, maydanoz', 'Yoğun aroma', 'Köklü/taze seçenekler', 'İşletmelere düzenli tedarik'],
   },
 ];
 
 /** Sayılarla — anasayfada güven veren istatistikler (DÜZENLE) */
 export const stats = [
-  { value: '120+', label: 'Kurulan akıllı sistem' },
-  { value: '%40', label: 'Ortalama su tasarrufu' },
-  { value: '8.000+', label: 'İzlenen dönüm arazi' },
-  { value: '7 yıl', label: 'Saha tecrübesi' },
+  { value: '12 ay', label: 'Yıl boyu taze üretim' },
+  { value: '%90', label: 'Daha az su (topraksız)' },
+  { value: '5.000 m²', label: 'Modern sera alanı' },
+  { value: 'Kalıntısız', label: 'Hijyenik yetiştirme' },
 ];

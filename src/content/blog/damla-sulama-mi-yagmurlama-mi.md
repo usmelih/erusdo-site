@@ -66,4 +66,4 @@ Ancak en doğru karar, su kaynağınızın debisi, toprağınızın su tutma kap
 
 Hangi sistemi seçerseniz seçin, üzerine eklenen **toprak nem sensörü ve otomasyon** suyu daha da verimli kullanmanızı sağlar. Akıllı vanalar, doğru zamanda doğru miktarda sulama yaparak her iki sistemin de potansiyelini en üst düzeye çıkarır.
 
-Erusdo olarak mevcut sisteminizi modernize ediyor ya da sıfırdan en uygun çözümü kuruyoruz. [Ücretsiz saha analizi](/iletisim) için bizimle iletişime geçin.
+Erusdo olarak kendi seralarımızda suyu en verimli kullanan yöntemleri uyguluyor, topraksız tarımla taze ve kalıntısız ürünler yetiştiriyoruz. Ürünlerimiz için [bizimle iletişime geçin](/iletisim).
