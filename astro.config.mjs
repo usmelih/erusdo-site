@@ -2,11 +2,11 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
-// GitHub Pages (proje sayfası) için varsayılan ayarlar.
-// İleride özel alan adı (ör. erusdo.com) bağlanırsa:
-//   site: 'https://erusdo.com'  ve  base: '/'  yapın,
-//   ardından public/CNAME dosyasına alan adını yazın.
-const BASE = '/erusdo-site';
+// Özel alan adı (erusdo.com) ile yayında. public/CNAME alan adını içerir.
+// Tekrar proje sayfasına (usmelih.github.io/erusdo-site) dönülürse:
+//   site: 'https://usmelih.github.io'  ve  base: '/erusdo-site'  yapın,
+//   ardından public/CNAME dosyasını silin.
+const BASE = '/';
 
 // Markdown içindeki kök-göreli bağlantıları (/iletisim gibi) base path ile
 // önekler; böylece GitHub Pages alt dizininde de doğru çalışır.
@@ -26,7 +26,7 @@ function rehypeBaseLinks() {
 }
 
 export default defineConfig({
-  site: 'https://usmelih.github.io',
+  site: 'https://erusdo.com',
   base: BASE,
   trailingSlash: 'ignore',
   integrations: [
