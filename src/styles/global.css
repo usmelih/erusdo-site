@@ -234,8 +234,8 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.45rem); }
    mobilde tek sütuna indirir. !important, inline stili ezebilen tek yoldur. */
 @media (max-width: 860px){
   .stack-mobile { grid-template-columns: 1fr !important; align-items: start !important; }
-  /* Ürün kartlarında görsel mobilde her zaman üstte kalsın */
-  .prod-media { order: -1 !important; min-height: 200px !important; }
+  /* Ürün kartlarında görsel mobilde her zaman üstte ve net yükseklikte */
+  .prod-media { order: -1 !important; height: 240px !important; min-height: 240px !important; }
 }
 
 /* ---------- Liste tik ---------- */

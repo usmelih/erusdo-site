@@ -99,6 +99,7 @@ export const products = [
   {
     slug: 'kivircik-marul',
     icon: 'leaf',
+    image: '/images/urun-kivircik-marul.jpg',
     title: 'Kıvırcık Marul',
     summary:
       'Kokopit substratında topraksız yetişen, kıvrımlı ve gevrek yapraklı taze kıvırcık ' +
@@ -108,6 +109,7 @@ export const products = [
   {
     slug: 'marul',
     icon: 'leaf',
+    image: '/images/urun-marul.jpg',
     title: 'Marul',
     summary:
       'Serada kontrollü iklimde, kokopitte damla sulamayla yetişen sofralık marul. ' +
@@ -117,6 +119,7 @@ export const products = [
   {
     slug: 'lollo-rosso',
     icon: 'leaf',
+    image: '/images/urun-lollo-rosso.jpg',
     title: 'Lollo Rosso',
     summary:
       'Kıvrımlı, kırmızı-bordo yapraklı dekoratif salata marulu. Kokopit substratında ' +
@@ -126,6 +129,7 @@ export const products = [
   {
     slug: 'cilek',
     icon: 'droplet',
+    image: '/images/urun-cilek.jpg',
     title: 'Çilek',
     summary:
       'Askılı kokopit sisteminde, yerden yüksekte topraksız yetişen; tertemiz, parlak ' +

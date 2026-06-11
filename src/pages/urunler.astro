@@ -32,13 +32,9 @@ const faqs = [
         {products.map((s, i) => (
           <article id={s.slug} class="card" style="scroll-margin-top:100px; padding:0; overflow:hidden;">
             <div class="grid stack-mobile" style={`grid-template-columns:${i % 2 === 0 ? '0.42fr 0.58fr' : '0.58fr 0.42fr'}; gap:0; align-items:stretch;`}>
-              <div class="prod-media" style={`order:${i % 2 === 0 ? 0 : 1}; background:linear-gradient(150deg, var(--primary), var(--primary-700)); min-height:240px; display:grid; place-items:center; position:relative;`}>
-                <div style="color:#fff;text-align:center;padding:30px">
-                  <div style="width:72px;height:72px;border-radius:20px;background:rgba(255,255,255,.14);display:grid;place-items:center;margin:0 auto 16px">
-                    <Icon name={s.icon} style="width:36px;height:36px" />
-                  </div>
-                  <span style="font-family:var(--font-head);font-weight:700;letter-spacing:.1em;opacity:.8;font-size:.8rem">{s.title.toUpperCase()}</span>
-                </div>
+              <div class="prod-media" style={`order:${i % 2 === 0 ? 0 : 1}; min-height:240px; position:relative; overflow:hidden;`}>
+                <img src={url(s.image)} alt={`${s.title} — Erusdo'nun kokopit ile topraksız tarımla ürettiği taze ${s.title.toLowerCase()}`} loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+                <span style="position:absolute;left:16px;bottom:14px;background:rgba(12,44,29,.72);color:#fff;font-family:var(--font-head);font-weight:700;letter-spacing:.06em;font-size:.78rem;padding:6px 13px;border-radius:100px;backdrop-filter:blur(4px)">{s.title.toUpperCase()}</span>
               </div>
               <div style="padding:38px">
                 <h2 style="font-size:1.6rem">{s.title}</h2>

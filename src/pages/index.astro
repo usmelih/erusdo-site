@@ -46,13 +46,8 @@ const steps = [
         </div>
       </div>
 
-      <div class="hero-visual" aria-hidden="true">
-        <svg class="leafpattern" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-          <defs><pattern id="p" width="48" height="48" patternUnits="userSpaceOnUse">
-            <path d="M24 8c-9 0-16 6-16 16 0 9 7 16 16 16 0-8 0-16-10-22 9 1 13 6 16 12 1-2 1-4 1-6 0-9-6-16-7-16Z" fill="#ffffff"/>
-          </pattern></defs>
-          <rect width="400" height="400" fill="url(#p)"/>
-        </svg>
+      <div class="hero-visual">
+        <img src={url('/images/hero-sera.jpg')} alt="Erusdo serasında kokopit ile topraksız yetişen taze marul sıraları — Çine, Aydın" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
         <div class="hero-card c1">
           <span class="dot" style="background:var(--accent-soft);color:#5a7a18"><Icon name="seedling" style="width:22px;height:22px" /></span>
           <div><b>Kokopit</b><span>Hijyenik kök ortamı</span></div>
@@ -89,13 +84,17 @@ const steps = [
       </div>
       <div class="grid cols-3">
         {products.map((s) => (
-          <article class="card">
-            <div class="card-icon"><Icon name={s.icon} /></div>
-            <h3>{s.title}</h3>
-            <p>{s.summary}</p>
-            <a class="readmore mt-3" href={url(`/urunler#${s.slug}`)} style="font-family:var(--font-head);font-weight:600;color:var(--primary);display:inline-flex;gap:6px;align-items:center;">
-              Detaylar <Icon name="arrow" style="width:16px;height:16px" />
+          <article class="card" style="padding:0;overflow:hidden;display:flex;flex-direction:column">
+            <a href={url(`/urunler#${s.slug}`)} style="display:block;aspect-ratio:16/11;overflow:hidden">
+              <img src={url(s.image)} alt={`${s.title} — kokopit ile topraksız üretim`} loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" />
             </a>
+            <div style="padding:24px 26px 26px;display:flex;flex-direction:column;flex:1">
+              <h3>{s.title}</h3>
+              <p style="color:var(--ink-soft);font-size:.98rem;margin-top:8px">{s.summary}</p>
+              <a class="readmore mt-3" href={url(`/urunler#${s.slug}`)} style="font-family:var(--font-head);font-weight:600;color:var(--primary);display:inline-flex;gap:6px;align-items:center;margin-top:auto;padding-top:16px">
+                Detaylar <Icon name="arrow" style="width:16px;height:16px" />
+              </a>
+            </div>
           </article>
         ))}
       </div>
