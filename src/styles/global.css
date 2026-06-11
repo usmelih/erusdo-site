@@ -228,6 +228,14 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.45rem); }
 @media (max-width: 900px){ .cols-3, .cols-4 { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 620px){ .cols-2, .cols-3, .cols-4 { grid-template-columns: 1fr; } }
 
+/* Inline grid-template-columns ile kurulan yan-yana (metin+görsel) bölümleri
+   mobilde tek sütuna indirir. !important, inline stili ezebilen tek yoldur. */
+@media (max-width: 860px){
+  .stack-mobile { grid-template-columns: 1fr !important; align-items: start !important; }
+  /* Ürün kartlarında görsel mobilde her zaman üstte kalsın */
+  .prod-media { order: -1 !important; min-height: 200px !important; }
+}
+
 /* ---------- Liste tik ---------- */
 .ticks li { position: relative; padding-left: 30px; margin-bottom: 11px; color: var(--ink-soft); }
 .ticks li::before {

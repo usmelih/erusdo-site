@@ -35,7 +35,7 @@ const categories = [...new Set(posts.map((p) => p.data.category))];
       </div>
 
       <!-- Öne çıkan -->
-      <a href={url(`/blog/${featured.slug}`)} class="card post-item" data-cat={featured.data.category}
+      <a href={url(`/blog/${featured.slug}`)} class="card post-item stack-mobile" data-cat={featured.data.category}
          style={`display:grid; grid-template-columns:1fr 1fr; gap:0; padding:0; overflow:hidden; margin-bottom:36px;`}>
         <div class="thumb" style={`min-height:280px; display:grid; place-items:center; background:linear-gradient(150deg, ${featured.data.coverColor}, var(--primary-700));`}>
           <span style="font-family:var(--font-head);font-weight:800;font-size:3.5rem;color:rgba(255,255,255,.85)">{featured.data.title.charAt(0)}</span>
