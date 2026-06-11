@@ -15,7 +15,7 @@
 export const site = {
   // --- Marka ---
   name: 'Erusdo',
-  legalName: 'Erusdo Tarım', // DÜZENLE: resmi ünvan
+  legalName: 'Erusdo AgroTech', // resmi ünvan
   tagline: 'Sera Topraksız Tarım',
   description:
     'Erusdo, Çine/Aydın’da sera topraksız (hidroponik) tarım yöntemiyle taze, ' +
@@ -27,8 +27,8 @@ export const site = {
   phoneHref: 'tel:+905425166170',
   whatsapp: '0542 516 61 70',
   whatsappHref: 'https://wa.me/905425166170',
-  email: 'info@erusdo.com', // DÜZENLE: gerçek e-posta adresiniz
-  emailHref: 'mailto:info@erusdo.com',
+  email: 'bilgi@erusdo.com',
+  emailHref: 'mailto:bilgi@erusdo.com',
 
   // --- Adres & Harita ---
   address: {
@@ -45,33 +45,30 @@ export const site = {
   // Google "Yol Tarifi" bağlantısı
   mapDirectionsUrl:
     'https://www.google.com/maps/dir/?api=1&destination=37.700676,27.969891',
-  // Google "İşletmeyi görüntüle" bağlantısı (DÜZENLE: Google Business profiliniz
-  // oluştuğunda buraya işletme linkinizi koyun — local SEO için önemli)
-  mapPlaceUrl: 'https://www.google.com/maps?q=37.700676,27.969891',
+  // Google "İşletmeyi görüntüle" bağlantısı (doğrulanmış Google Business profili)
+  mapPlaceUrl:
+    'https://www.google.com/maps/place//data=!4m2!3m1!1s0x14bf29a3e25bf8bd:0xf3ed74b6b84dea6d?sa=X&ved=1t:8290&hl=tr&ictx=111',
 
-  // --- Çalışma saatleri (DÜZENLE) ---
+  // --- Çalışma saatleri ---
   hours: [
-    { day: 'Pazartesi – Cuma', time: '08:30 – 18:00' },
-    { day: 'Cumartesi', time: '09:00 – 14:00' },
-    { day: 'Pazar', time: 'Kapalı' },
+    { day: 'Her gün (Pazartesi – Pazar)', time: '09:00 – 18:00' },
   ],
   // Schema.org formatı (arama motorları için)
   openingHoursSpec: [
-    { days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:30', closes: '18:00' },
-    { days: ['Saturday'], opens: '09:00', closes: '14:00' },
+    { days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], opens: '09:00', closes: '18:00' },
   ],
 
-  // --- Sosyal medya (DÜZENLE / boş bırakılanlar gizlenir) ---
+  // --- Sosyal medya (boş bırakılanlar gizlenir) ---
   social: {
-    instagram: 'https://instagram.com/erusdo',
-    linkedin: 'https://linkedin.com/company/erusdo',
+    instagram: 'https://www.instagram.com/erusdo_agrotech/',
+    facebook: 'https://www.facebook.com/people/Erusdo-Agrotech/61568006622820/',
+    linkedin: '',
     youtube: '',
     x: '',
-    facebook: '',
   },
 
   // --- Kuruluş yılı (schema için) ---
-  foundingYear: '2019', // DÜZENLE
+  foundingYear: '2025',
 };
 
 /**
@@ -82,7 +79,7 @@ export const site = {
  * etiketli, doğrulanmış bir harita gösterebilirsiniz — local SEO için ideal.
  */
 export const mapEmbedSrc =
-  `https://www.google.com/maps?q=${encodeURIComponent(site.address.full)}&hl=tr&z=15&output=embed`;
+  `https://www.google.com/maps?q=${encodeURIComponent('Erusdo Agrotech, ' + site.address.full)}&hl=tr&z=16&output=embed`;
 
 /** Ana menü */
 export const nav = [
@@ -100,40 +97,31 @@ export const nav = [
  */
 export const products = [
   {
-    slug: 'domates',
+    slug: 'kivircik-marul',
     icon: 'leaf',
-    title: 'Domates',
+    title: 'Kıvırcık Marul',
     summary:
-      'Topraksız sistemde, dengeli besin çözeltisiyle yetişen; dolgun, aromalı ve ' +
-      'dayanıklı salkım ve kokteyl domatesler.',
-    features: ['Salkım & kokteyl çeşitleri', 'Yüksek aroma ve raf ömrü', 'Kalıntısız üretim', 'Yıl boyu temin'],
+      'Topraksız hidroponik sistemde yetişen, kıvrımlı ve gevrek yapraklı taze kıvırcık ' +
+      'marul. Köküyle birlikte hasat edilerek uzun süre tazeliğini korur.',
+    features: ['Köklü, uzun tazelik', 'Gevrek ve canlı yaprak', 'Kalıntısız üretim', 'Yıl boyu taze temin'],
   },
   {
-    slug: 'salatalik',
-    icon: 'seedling',
-    title: 'Salatalık',
-    summary:
-      'Serada kontrollü iklimde yetişen, çıtır ve taze mini ile sofralık salatalıklar. ' +
-      'Topraksız tarımın hijyenik avantajıyla.',
-    features: ['Mini & sofralık çeşitler', 'Çıtır doku, taze hasat', 'Hijyenik yetiştirme', 'Düzenli tedarik'],
-  },
-  {
-    slug: 'biber',
-    icon: 'sun',
-    title: 'Biber',
-    summary:
-      'Renkli dolmalık, sivri ve çarliston biber çeşitleri. Besin değeri korunmuş, ' +
-      'parlak ve sağlıklı ürünler.',
-    features: ['Renkli & sivri çeşitler', 'Canlı renk ve dolgunluk', 'Az ilaçlı üretim', 'Mevsim boyu hasat'],
-  },
-  {
-    slug: 'yaprakli-yesillikler',
+    slug: 'marul',
     icon: 'leaf',
-    title: 'Yapraklı Yeşillikler',
+    title: 'Marul',
     summary:
-      'Marul, kıvırcık, roka ve aromatik yeşillikler. Köküyle birlikte tazeliğini ' +
-      'koruyan, topraksız hidroponik üretim.',
-    features: ['Marul, kıvırcık, roka', 'Köklü, uzun tazelik', 'Yıkamaya hazır temizlik', 'Hızlı tedarik'],
+      'Serada kontrollü iklimde, dengeli besin çözeltisiyle yetişen sofralık marul. ' +
+      'Topraksız tarımın hijyenik avantajıyla tertemiz ve taze.',
+    features: ['Hijyenik yetiştirme', 'Dolgun ve taze yaprak', 'Yıkamaya hazır temizlik', 'Düzenli tedarik'],
+  },
+  {
+    slug: 'lollo-rosso',
+    icon: 'leaf',
+    title: 'Lollo Rosso',
+    summary:
+      'Kıvrımlı, kırmızı-bordo yapraklı dekoratif salata marulu. Topraksız sistemde ' +
+      'yetişen; sofralara renk katan, gevrek ve aromatik bir çeşit.',
+    features: ['Canlı kırmızı-bordo renk', 'Kıvrımlı, gevrek yaprak', 'Köklü, uzun tazelik', 'Kalıntısız hasat'],
   },
   {
     slug: 'cilek',
@@ -144,21 +132,12 @@ export const products = [
       'tatlı çilekler.',
     features: ['Yerden yüksek hijyenik üretim', 'Yüksek tat ve aroma', 'Kalıntısız hasat', 'Sezonluk taze temin'],
   },
-  {
-    slug: 'aromatik-bitkiler',
-    icon: 'seedling',
-    title: 'Aromatik Bitkiler',
-    summary:
-      'Fesleğen, nane, maydanoz gibi taze aromatik bitkiler. Mutfaklar ve işletmeler ' +
-      'için canlı, kokulu ve dayanıklı.',
-    features: ['Fesleğen, nane, maydanoz', 'Yoğun aroma', 'Köklü/taze seçenekler', 'İşletmelere düzenli tedarik'],
-  },
 ];
 
 /** Sayılarla — anasayfada güven veren istatistikler (DÜZENLE) */
 export const stats = [
   { value: '12 ay', label: 'Yıl boyu taze üretim' },
   { value: '%90', label: 'Daha az su (topraksız)' },
-  { value: '5.000 m²', label: 'Modern sera alanı' },
+  { value: '3.000 m²', label: 'Modern sera alanı' },
   { value: 'Kalıntısız', label: 'Hijyenik yetiştirme' },
 ];
