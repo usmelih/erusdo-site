@@ -137,6 +137,8 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.45rem); }
 .brand { display: inline-flex; align-items: center; gap: 11px; font-family: var(--font-head); font-weight: 800; font-size: 1.32rem; letter-spacing: -0.03em; color: var(--ink); }
 .brand .mark { width: 34px; height: 34px; }
 .brand small { display:block; font-size: .6rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--primary); margin-top: 2px; }
+.brand-logo { height: 30px; width: auto; display: block; color: var(--primary); }
+.site-footer .brand-logo { height: 34px; color: #fff; }
 .nav { display: flex; align-items: center; gap: 4px; }
 .nav a { font-family: var(--font-head); font-weight: 500; font-size: 0.98rem; color: var(--ink-soft); padding: 9px 14px; border-radius: 100px; transition: color .15s, background .15s; }
 .nav a:hover { color: var(--primary); background: var(--primary-tint); }
