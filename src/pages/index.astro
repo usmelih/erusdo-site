@@ -10,16 +10,16 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   .slice(0, 3);
 
 const why = [
-  { icon: 'seedling', title: 'Topraksız (Hidroponik) Üretim', text: 'Ürünlerimiz toprakla temas etmeden, bitkiye özel besin çözeltisiyle yetişir. Daha temiz, daha hijyenik, daha sağlıklı.' },
+  { icon: 'seedling', title: 'Kokopit ile Topraksız Üretim', text: 'Ürünlerimiz tarla toprağıyla temas etmeden, kokopit (hindistan cevizi torfu) substratında yetişir. Daha temiz, daha hijyenik, daha sağlıklı.' },
   { icon: 'shield', title: 'Kalıntısız & Az İlaçlı', text: 'Kontrollü sera ortamı, zararlı baskısını en aza indirir. Böylece çok daha az ilaçla, kalıntısız ürün üretiriz.' },
   { icon: 'sun', title: 'Yıl Boyu Taze', text: 'Mevsim koşullarına bağlı kalmadan, 12 ay boyunca taze ve standart kalitede hasat yaparız. Tedarikte süreklilik.' },
-  { icon: 'droplet', title: 'Su Dostu & Sürdürülebilir', text: 'Kapalı devre topraksız sistem, geleneksel tarıma göre %90’a varan oranda az su kullanır. Doğaya saygılı üretim.' },
+  { icon: 'droplet', title: 'Su Dostu & Sürdürülebilir', text: 'Kokopitin yüksek su tutma kapasitesi ve damla sulama, suyu doğrudan köke ölçülü verir; çok daha az suyla, doğaya saygılı üretim.' },
 ];
 
 const steps = [
   { title: 'Sağlıklı Fideyle Başlangıç', text: 'Üretime, hastalıksız ve güçlü fidelerle başlıyoruz. Doğru çeşit seçimi, kaliteli hasadın ilk adımıdır.' },
-  { title: 'Topraksız Yetiştirme', text: 'Bitkiler, kök bölgesine dengeli verilen su ve besin çözeltisiyle topraksız ortamda büyür; her bitki tam ihtiyacı kadar beslenir.' },
-  { title: 'Kontrollü Sera İklimi', text: 'Sıcaklık, nem ve havalandırmayı sürekli dengeleyerek bitkiyi ideal koşullarda tutar, kaliteyi standart hâle getiririz.' },
+  { title: 'Kokopite Dikim', text: 'Fideler, tarla toprağı yerine kokopit dolu torba ve saksılara dikilir; kök için suyu ve havayı dengede tutan hijyenik bir ortam sağlanır.' },
+  { title: 'Damla Sulama ile Besleme', text: 'Su ve besinler, damla sulama ile doğrudan köke verilir; her bitki tam ihtiyacı kadar, ölçülü beslenir.' },
   { title: 'Hijyenik Hasat & Paketleme', text: 'Ürünleri en taze hâliyle, hijyen kurallarına uygun toplar, özenle paketleyip hızla sevk ederiz.' },
 ];
 ---
@@ -28,12 +28,12 @@ const steps = [
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <span class="eyebrow"><Icon name="leaf" style="width:15px;height:15px" /> Sera Topraksız Tarım · Çine / Aydın</span>
-        <h1>Topraksız tarımla yetişen <span style="color:var(--primary)">tertemiz</span> sebze ve meyve</h1>
+        <span class="eyebrow"><Icon name="leaf" style="width:15px;height:15px" /> Kokopit ile Topraksız Tarım · Çine / Aydın</span>
+        <h1>Kokopitte topraksız yetişen <span style="color:var(--primary)">tertemiz</span> sebze ve meyve</h1>
         <p class="lead">
-          Erusdo, modern seralarında topraksız (hidroponik) tarım yöntemiyle taze,
-          hijyenik ve lezzetli ürünler üretir. Daha az su, daha az ilaç, yıl boyu
-          aynı kalite.
+          Erusdo, modern seralarında kokopit (hindistan cevizi torfu) substratında
+          topraksız tarım yöntemiyle taze, hijyenik ve lezzetli ürünler üretir.
+          Damla sulamayla su verimli, daha az ilaç, yıl boyu aynı kalite.
         </p>
         <div class="hero-cta">
           <a class="btn btn-primary btn-lg" href={url('/urunler')}>Ürünlerimizi İnceleyin <Icon name="arrow" style="width:18px;height:18px" /></a>
@@ -55,7 +55,7 @@ const steps = [
         </svg>
         <div class="hero-card c1">
           <span class="dot" style="background:var(--accent-soft);color:#5a7a18"><Icon name="seedling" style="width:22px;height:22px" /></span>
-          <div><b>Topraksız</b><span>Hijyenik kök ortamı</span></div>
+          <div><b>Kokopit</b><span>Hijyenik kök ortamı</span></div>
         </div>
         <div class="hero-card c2">
           <span class="dot" style="background:var(--primary-tint);color:var(--primary)"><Icon name="droplet" style="width:22px;height:22px" /></span>
@@ -110,9 +110,9 @@ const steps = [
           <span class="eyebrow">Neden Erusdo?</span>
           <h2 class="mt-2">Daha temiz bir tabak için</h2>
           <p class="lead mt-2">
-            Topraksız tarım sadece bir yöntem değil, bir kalite taahhüdüdür. Suyu
-            ve besini kontrol ederek; hijyenik, kalıntısız ve her zaman taze
-            ürünler üretiyoruz. Sofranıza gelen her ürünün arkasında özen var.
+            Kokopit ile topraksız tarım sadece bir yöntem değil, bir kalite
+            taahhüdüdür. Suyu ve besini kontrol ederek; hijyenik, kalıntısız ve her
+            zaman taze ürünler üretiyoruz. Sofranıza gelen her ürünün arkasında özen var.
           </p>
           <a class="btn btn-primary mt-4" href={url('/uretim-yontemimiz')}>Üretim yöntemimizi keşfedin</a>
         </div>

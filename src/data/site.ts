@@ -16,11 +16,11 @@ export const site = {
   // --- Marka ---
   name: 'Erusdo',
   legalName: 'Erusdo AgroTech', // resmi ünvan
-  tagline: 'Sera Topraksız Tarım',
+  tagline: 'Kokopit ile Topraksız Tarım',
   description:
-    'Erusdo, Çine/Aydın’da sera topraksız (hidroponik) tarım yöntemiyle taze, ' +
-    'hijyenik ve lezzetli sebze ve meyve üretir. Topraksız sistemde, daha az ' +
-    'suyla, kalıntısız ve yıl boyu üretim.',
+    'Erusdo, Çine/Aydın’da kokopit (hindistan cevizi torfu) substratında topraksız ' +
+    'tarım yöntemiyle taze, hijyenik ve lezzetli sebze ve meyve üretir. Damla sulamayla ' +
+    'su verimli, kalıntısız ve yıl boyu üretim.',
 
   // --- İletişim ---
   phone: '0542 516 61 70',
@@ -101,7 +101,7 @@ export const products = [
     icon: 'leaf',
     title: 'Kıvırcık Marul',
     summary:
-      'Topraksız hidroponik sistemde yetişen, kıvrımlı ve gevrek yapraklı taze kıvırcık ' +
+      'Kokopit substratında topraksız yetişen, kıvrımlı ve gevrek yapraklı taze kıvırcık ' +
       'marul. Köküyle birlikte hasat edilerek uzun süre tazeliğini korur.',
     features: ['Köklü, uzun tazelik', 'Gevrek ve canlı yaprak', 'Kalıntısız üretim', 'Yıl boyu taze temin'],
   },
@@ -110,8 +110,8 @@ export const products = [
     icon: 'leaf',
     title: 'Marul',
     summary:
-      'Serada kontrollü iklimde, dengeli besin çözeltisiyle yetişen sofralık marul. ' +
-      'Topraksız tarımın hijyenik avantajıyla tertemiz ve taze.',
+      'Serada kontrollü iklimde, kokopitte damla sulamayla yetişen sofralık marul. ' +
+      'Topraksız üretimin hijyenik avantajıyla tertemiz ve taze.',
     features: ['Hijyenik yetiştirme', 'Dolgun ve taze yaprak', 'Yıkamaya hazır temizlik', 'Düzenli tedarik'],
   },
   {
@@ -119,8 +119,8 @@ export const products = [
     icon: 'leaf',
     title: 'Lollo Rosso',
     summary:
-      'Kıvrımlı, kırmızı-bordo yapraklı dekoratif salata marulu. Topraksız sistemde ' +
-      'yetişen; sofralara renk katan, gevrek ve aromatik bir çeşit.',
+      'Kıvrımlı, kırmızı-bordo yapraklı dekoratif salata marulu. Kokopit substratında ' +
+      'topraksız yetişen; sofralara renk katan, gevrek ve aromatik bir çeşit.',
     features: ['Canlı kırmızı-bordo renk', 'Kıvrımlı, gevrek yaprak', 'Köklü, uzun tazelik', 'Kalıntısız hasat'],
   },
   {
@@ -128,8 +128,8 @@ export const products = [
     icon: 'droplet',
     title: 'Çilek',
     summary:
-      'Askılı topraksız sistemde, yerden yüksekte yetişen; tertemiz, parlak ve ' +
-      'tatlı çilekler.',
+      'Askılı kokopit sisteminde, yerden yüksekte topraksız yetişen; tertemiz, parlak ' +
+      've tatlı çilekler.',
     features: ['Yerden yüksek hijyenik üretim', 'Yüksek tat ve aroma', 'Kalıntısız hasat', 'Sezonluk taze temin'],
   },
 ];
@@ -137,7 +137,7 @@ export const products = [
 /** Sayılarla — anasayfada güven veren istatistikler (DÜZENLE) */
 export const stats = [
   { value: '12 ay', label: 'Yıl boyu taze üretim' },
-  { value: '%90', label: 'Daha az su (topraksız)' },
+  { value: '%90', label: 'Daha az su (damla sulama)' },
   { value: '3.000 m²', label: 'Modern sera alanı' },
   { value: 'Kalıntısız', label: 'Hijyenik yetiştirme' },
 ];

@@ -4,64 +4,64 @@ import Icon from '../components/Icon.astro';
 import { url } from '../utils';
 
 const advantages = [
-  { icon: 'shield', title: 'Daha Hijyenik', text: 'Bitki toprakla temas etmediği için topraktan bulaşan hastalık ve kirleticiler ortadan kalkar. Sonuç: tertemiz, güvenli ürün.' },
-  { icon: 'droplet', title: 'Çok Daha Az Su', text: 'Kapalı devre sistemde su geri kazanılır; geleneksel tarıma göre %90’a varan su tasarrufu sağlanır.' },
-  { icon: 'seedling', title: 'Dengeli Beslenme', text: 'Her bitki, ihtiyaç duyduğu besini tam ölçüsünde alır. Bu da daha sağlıklı, daha lezzetli ve standart kalitede ürün demektir.' },
+  { icon: 'shield', title: 'Daha Hijyenik', text: 'Bitki tarla toprağıyla temas etmediği için topraktan bulaşan hastalık, yabancı ot ve kirleticiler ortadan kalkar. Sonuç: tertemiz, güvenli ürün.' },
+  { icon: 'droplet', title: 'Su Verimli', text: 'Kokopitin yüksek su tutma kapasitesi ve damla sulama sayesinde su ve besin doğrudan köke, ölçülü verilir; israf en aza iner.' },
+  { icon: 'seedling', title: 'Dengeli Beslenme', text: 'Kök bölgesine verilen besin çözeltisi sürekli izlenir. Her bitki ihtiyacı kadar beslenir; daha sağlıklı, lezzetli ve standart kalitede ürün elde edilir.' },
   { icon: 'sun', title: 'Yıl Boyu Üretim', text: 'Kontrollü sera ortamı sayesinde mevsimden bağımsız, 12 ay boyunca taze hasat yapılır.' },
-  { icon: 'leaf', title: 'Az İlaç, Kalıntısız', text: 'Kontrollü ortam zararlı baskısını düşürür; çok daha az ilaçla, kalıntısız üretim mümkün olur.' },
-  { icon: 'chart', title: 'Yüksek & Stabil Verim', text: 'Optimum koşullar, birim alandan daha yüksek ve istikrarlı verim sağlar; tedarikte süreklilik garanti altına alınır.' },
+  { icon: 'leaf', title: 'Az İlaç, Kalıntısız', text: 'Steril başlangıç ve kontrollü ortam zararlı baskısını düşürür; çok daha az ilaçla, kalıntısız üretim mümkün olur.' },
+  { icon: 'chart', title: 'Yüksek & Stabil Verim', text: 'Köke uygun havalanma ve dengeli beslenme, birim alandan daha yüksek ve istikrarlı verim sağlar; tedarikte süreklilik garanti altına alınır.' },
 ];
 
 const steps = [
   { title: 'Fide Hazırlığı', text: 'Hastalıksız, güçlü fidelerle başlıyoruz. Doğru çeşit seçimi kaliteli hasadın temelidir.' },
-  { title: 'Topraksız Yerleştirme', text: 'Fideler, kök bölgesini destekleyen inert ortamlara (ör. kokopit, perlit) yerleştirilir; toprak kullanılmaz.' },
-  { title: 'Besin Çözeltisi Yönetimi', text: 'Su ve bitki besinleri, doğru oran ve zamanlamayla kök bölgesine verilir. Beslenme sürekli izlenir ve dengelenir.' },
+  { title: 'Kokopite Dikim', text: 'Fideler, tarla toprağı yerine kokopit (hindistan cevizi torfu) dolu torba ve saksılara dikilir. Kokopit, kökü destekler; suyu ve havayı dengede tutar.' },
+  { title: 'Damla Sulama ile Besleme', text: 'Su ve bitki besinleri, damla sulama hatlarıyla doğru oran ve zamanlamada doğrudan kök bölgesine verilir. Beslenme sürekli izlenir ve dengelenir.' },
   { title: 'Kontrollü Sera İklimi', text: 'Sıcaklık, nem ve havalandırma optimum aralıkta tutulur; bitki her zaman ideal koşullarda büyür.' },
   { title: 'Bitki Sağlığı Takibi', text: 'Bitkiler düzenli kontrol edilir; sorunlar büyümeden, çevreci yöntemlerle ele alınır.' },
   { title: 'Hijyenik Hasat & Paketleme', text: 'Ürünler en taze hâliyle toplanır, hijyen kurallarına uygun paketlenir ve hızla sevk edilir.' },
 ];
 ---
-<BaseLayout title="Üretim Yöntemimiz — Topraksız (Hidroponik) Tarım" description="Erusdo, topraksız (hidroponik) tarım yöntemiyle üretim yapar. Topraksız tarımın ne olduğunu, sürecimizi ve sağladığı hijyen, lezzet ve sürdürülebilirlik avantajlarını anlattık.">
+<BaseLayout title="Üretim Yöntemimiz — Kokopit ile Topraksız Tarım" description="Erusdo, kokopit (hindistan cevizi torfu) substratında topraksız tarım yapar. Kokopit yönteminin ne olduğunu, damla sulamayla üretim sürecimizi ve sağladığı hijyen, lezzet ve su verimliliği avantajlarını anlattık.">
   <section class="page-hero">
     <div class="container">
       <div class="breadcrumb"><a href={url('/')}>Anasayfa</a> / Üretim Yöntemimiz</div>
       <span class="eyebrow">Üretim Yöntemimiz</span>
-      <h1 class="mt-2">Topraksız (Hidroponik) Tarım</h1>
+      <h1 class="mt-2">Kokopit ile Topraksız Tarım</h1>
       <p class="lead mt-2" style="max-width:62ch">
-        Ürünlerimizi toprak kullanmadan, su ve besinleri kontrol ederek
-        yetiştiriyoruz. Bu yöntem; daha hijyenik, daha lezzetli ve daha
-        sürdürülebilir bir üretim demektir.
+        Ürünlerimizi tarla toprağı yerine kokopit (hindistan cevizi torfu)
+        substratında, suyu ve besini kontrol ederek yetiştiriyoruz. Bu yöntem;
+        daha hijyenik, daha lezzetli ve daha sürdürülebilir bir üretim demektir.
       </p>
     </div>
   </section>
 
-  <!-- TOPRAKSIZ TARIM NEDİR -->
+  <!-- KOKOPİT İLE TOPRAKSIZ TARIM NEDİR -->
   <section class="section">
     <div class="container">
       <div class="grid stack-mobile" style="grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center;">
         <div class="prose" style="font-size:1.08rem">
-          <h2>Topraksız tarım nedir?</h2>
+          <h2>Kokopit ile topraksız tarım nedir?</h2>
           <p>
-            Topraksız tarım (hidroponik), bitkilerin toprak yerine; suya çözünmüş
-            dengeli besinlerle, kontrollü bir ortamda yetiştirildiği modern bir
-            üretim yöntemidir. Bitkinin kökü, ihtiyaç duyduğu su ve besine tam
-            ölçüsünde ulaşır.
+            Kokopit, hindistan cevizinin kabuğundan elde edilen, doğal ve
+            sürdürülebilir bir yetiştirme ortamıdır. Tarla toprağının yerini alır;
+            suyu ve havayı dengeli tutarak kök için ideal bir ortam sağlar.
           </p>
           <p>
-            Toprak devreden çıktığı için topraktan kaynaklanan hastalıklar,
-            yabancı otlar ve kirleticiler ortadan kalkar. Bu da çok daha az
-            ilaçla, kalıntısız ve hijyenik üretim anlamına gelir.
+            Bitkiler bu kokopit substratına dikilir, su ve besinler damla sulama
+            ile doğrudan köke verilir. Toprak devreden çıktığı için topraktan
+            kaynaklanan hastalıklar, yabancı otlar ve kirleticiler ortadan kalkar;
+            bu da çok daha az ilaçla, kalıntısız ve hijyenik üretim demektir.
           </p>
           <p>
-            Biz Erusdo olarak bu yöntemi, kontrollü sera ortamıyla birleştirerek
+            Biz Erusdo olarak bu yöntemi kontrollü sera ortamıyla birleştirerek
             yıl boyu standart kalitede, taze sebze ve meyve üretiyoruz.
           </p>
         </div>
         <div class="card" style="background:linear-gradient(160deg,var(--primary-700),#0a2c1c); color:#fff; border:none;">
-          <h3 style="color:#fff">Kısaca topraksız tarım</h3>
+          <h3 style="color:#fff">Kısaca kokopit yöntemi</h3>
           <ul class="ticks mt-2" style="--c:#fff">
-            <li style="color:#dceee3">Toprak yok, kontrollü besleme var</li>
-            <li style="color:#dceee3">%90’a varan su tasarrufu</li>
+            <li style="color:#dceee3">Tarla toprağı yok, kokopit substratı var</li>
+            <li style="color:#dceee3">Damla sulama ile su verimli üretim</li>
             <li style="color:#dceee3">Daha az ilaç, kalıntısız ürün</li>
             <li style="color:#dceee3">Yıl boyu taze hasat</li>
             <li style="color:#dceee3">Hijyenik ve sürdürülebilir</li>
@@ -75,8 +75,8 @@ const steps = [
   <section class="section bg-soft">
     <div class="container">
       <div class="section-head center">
-        <span class="eyebrow">Neden Topraksız?</span>
-        <h2>Topraksız tarımın avantajları</h2>
+        <span class="eyebrow">Neden Kokopit?</span>
+        <h2>Kokopit ile topraksız tarımın avantajları</h2>
         <p>Bu yöntem hem ürün kalitesini hem de doğayı koruyor.</p>
       </div>
       <div class="grid cols-3">
